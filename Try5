@@ -1,0 +1,9 @@
+def function():
+    print("Hello")
+function()
+print()
+def function2(name,age,past_age):
+    print("Hello "+name+", you are "+age+", you were "+str(past_age)+" last year")
+function2("Jim","35",34)
+function2("Jay","25",24)
+function2(input("Enter your name"),input("Enter your age"),24)

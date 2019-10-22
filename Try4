@@ -1,0 +1,105 @@
+from math import*
+friends=["Jim",2,True]
+print("There's %d friends in the list." % len(friends))
+print(friends[2])
+print(friends[-2])
+print(friends[-3:-1])
+print(friends[-1:1]) #不能过0？
+print(friends[2:3])
+print("\n")
+friends[2]= False
+print(friends[2])
+print(friends[-2])
+print(friends[-3:-1])
+print(friends[-1:1])
+print(friends[2:3])
+numbers=[3,1,3,5,7,9]
+print("\n")
+friends.append("\"")
+friends.append("Tom") #加的是object,'Tom'
+friends.extend("Tom") #加的是element/sequence,'T''o''m'
+friends.insert(5,"Jerry")
+friends.append(numbers)
+friends.extend(numbers)
+print("\n")
+numbers.remove(3) #吧第一个3移除，用pop按位置移除
+print(friends)
+print(friends.extend(numbers))
+numbers.sort() #升序排序,可用sorted新建一个排序（另存为），sort相当于直接保存排序
+print(friends)
+numbers.pop() #去掉最后一个
+numbers.clear()
+print(friends)
+print(friends.index(True))
+print(friends.index(False))
+print(friends.count(1)) #计算出现频次
+print(friends.count(3))
+print(friends.count(True))
+print(friends.count(False))
+print()
+numbers1=[2,4,3,7,5]
+numbers1.reverse() #倒序排列
+print(friends)
+print(numbers1)
+numbers2=numbers1.copy() #复制
+print(numbers2)
+numbers2.append(numbers1)
+numbers1.extend(numbers2)
+print(numbers2)
+print()
+coordinates=(4,5) #Tuple cannot be changed
+print(coordinates[1])
+coordinates1=[(1,2),(2,3),(4,5)] #Tuples in the list cannot be changed either
+print(coordinates1)
+coordinates1.remove((2,3))
+print(coordinates1)
+coordinates1.append((5,6))
+print(coordinates1)
+coordinates1.extend((5,6))
+print(coordinates1)
+
+print()
+grid = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+    [0]
+]
+print(grid[1])
+print(grid[1][1])
+print(grid[3][0])
+# print(grid[3][1])显示 out of range；print(grid[3][1][1])显示 not subscriptable
+
+print()
+grid1 = [[1,2,3],[4,5,6],[7,8,9],[0]]
+print(grid1[1])
+print(grid1[1][1])
+print(grid1[3][0])
+# 说明矩阵格式随意，写多行更清楚
+
+print()
+print()
+grid2 = [
+    [1,2,3],
+    [4,5,6],
+    [7,8,9],
+    [0]
+]
+for row in grid2:
+    for column in row:
+        print(column)
+# 如之前所说，row和column名字任意，起作用的是“in”函数，表示选定row里的全部元素并保留源格式
+
+print()
+def translate(word):
+    translation = ""
+    for letter in word:
+        if letter.lower() in "aeiou":
+            if letter.isupper():
+                translation = translation + "G"
+            else:
+                translation = translation + "g"
+        else:
+            translation = translation + letter
+    return translation
+print(translate(input("Enter a Word: ")))

@@ -1,0 +1,50 @@
+list1 = ['a','b']
+print('list1 =', list1)
+list2 = list1 # 保存
+list1.append('c')
+print('list2 =', list2)
+list3 = list2.copy() # 另存为
+list2.append('d')
+print('list3 =', list3)
+list4 = list3[:] # 另存为
+list3.append('e')
+print('list4 =', list4)
+print()
+
+set1 = {"Beijing",} #创建一个元素的集合，如果不写逗号会按字母组成集合
+set1.update({"Shenzhen"}) # 不写{}的话会一个字母一个字母加，集合没有顺序，所以不能定位
+print(set1)
+set1.add("Shanghai") # 写了{}会报错
+print(set1)
+set1.discard("Beijing") #写了{}discard不会生效
+print(set1)
+set1.pop() #集合无序，所以每次运行pop都不同
+print(set1)
+print()
+
+for x in range(1, 5):
+    print(repr(x).rjust(2), repr(x**3).rjust(3), end=' ')
+    print(repr(x**5).rjust(4))
+for x in range(1, 5):
+    print('{0:2d} ==>{1:3d} ==>{2:4d}'.format(x, x**3, x**5))
+    # {a: bd} = format中第a个参数缩进b个十进制数字宽度
+
+print('{name}网址：{site}'.format(name='菜鸟教程', site='www.runoob.com'))
+print('%s网址：%s' % ('菜鸟教程','www.runoob.com'))
+
+print(round(2.5))
+print(round(2.6))
+from math import *
+print(round(2.5))
+num1=input("Enter num1 without decimal")
+num2=input("Enter num2 without decimal")
+plus=num1+num2
+print("num1+num2="+plus)
+plus1=int(num1)+int(num2)
+print(plus1)
+num3=input("Enter num1 with decimal")
+num4=input("Enter num1 with decimal")
+plus2=float(num3)+float(num4)
+mult=float(num3)*float(num4)
+print(plus2)
+print(round(mult,2))
