@@ -1,0 +1,17 @@
+function convertToRoman(num) {
+    const converter = [[1000, 'M'], [500, 'D'], [100, 'C'], [50, 'L'], [10, 'X'], [5, 'V'], [1, 'I']];
+    let cacheNum = num;
+    const cacheRoman = [];
+    for (let i = 0; i < converter.length; i++) {
+        if (cacheNum >= converter[i][0]) {
+            cacheRoman.push(converter[i][0]);
+            cacheNum -= converter[i][0];
+            i--;
+        }
+    }
+    const convertedConverter = converter.reduce((a, b) => a.concat(b));
+    const Roman = cacheRoman.map(item => convertedConverter[convertedConverter.indexOf(item) + 1]).join('').replace('IIII', 'IV').replace('XXXX', 'XL').replace('CCCC', 'CD').replace('VIV', 'IX').replace('LXL', 'XC').replace('DCD', 'CM');
+    return Roman;
+}
+
+console.log(convertToRoman(649));
