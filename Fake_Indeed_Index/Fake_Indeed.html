@@ -3,8 +3,52 @@
 <head>
   <meta charset='utf-8'>
   <title>Job search Canada | Indeed</title>
-  <link rel='icon' href='Indeed_miniLogo.ico'> <!--The bg-color of the icon here is white instead of clear which is the real Indeed.ca icon-->
-  <style>
+  <link rel='icon' href='Indeed_miniLogo.ico'>
+  <!--The bg-color of the icon here is white instead of clear which is the real Indeed.ca icon-->
+  <style> /* CSS effects may not display properly in Trident/EdgeHTML kernal browsers */
+    @media screen and (max-width: 1000px) { 
+      /* did not test for landscape display */
+      /*In the real Indeed.ca there is a different layout for mobile devices (from desktop windowed mode of the browser)*/
+      #resumeNEmployer, #popularSearchesArea p, #languageArea {
+        display: none;
+      }
+      #searchArea {
+        min-height: 400px;
+      }
+      #searchBoxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      #what, #where, #submit {
+        margin-top: 1em;
+      }
+      #what {
+        margin-right: 12%;
+      }
+      #submit {
+        width: 100%;
+      }
+      #findJobsButton {
+        width: 400px;
+      }
+      #popularSearchesArea {
+        min-height: 600px;
+      }
+      #popularSearches {
+        max-width: 600px;
+      }
+      #navBot {
+        flex-direction: column;
+      }
+    }
+    @media screen and (min-width: 1000px) {
+      #smallScreenEmployer {
+        display: none;
+      }
+    }
+
+
     body {
       height: 100%;
       display: flex;
@@ -13,16 +57,13 @@
       min-width: 50%;
       max-width: 100%;
     } 
-    /* @media screen and (min-width: 1080px) {
-      In the real Indeed.ca a totally different layout was designed for small-screen devices and computer's windowed mode
-    }*/
     a {
       text-decoration: none;
     }
     a:link, a:visited {
       color: currentColor;
     }
-    a:hover, #findJobsButton:hover, .popularSearchesButton:hover {
+    a:hover, #findJobsButton:hover, .popularSearchesButton:hover, #smallScreenEmployer button:hover {
       cursor: pointer;
     }
 
@@ -30,6 +71,7 @@
       height: 35px;
       display: flex;
       width: 100%;
+      min-width: 1000px;
       justify-content: space-between;
       align-items: center;
       text-align: left;
@@ -143,6 +185,7 @@
     }
     #what, #where {
       width: 400px;
+      min-width: 400px;
       text-align: left;
     }
     #what {
@@ -151,11 +194,7 @@
     #what .searchIcon {
       margin: 1em 0 0 -2em;
       border-color: rgb(168, 168, 168);
-    }
-    #where_submit {
-      display: flex;
-      justify-content: space-between;
-    }
+    }    
     #inputBoxWhat, #inputBoxWhere {
       position: relative;
       width: 94%;
@@ -169,6 +208,10 @@
     #inputBoxWhat:focus, #inputBoxWhere:focus {
       border-color: rgb(0, 0, 255, 0.7);
       background-color: white;
+      z-index: 1;
+    }
+    .deleteIcon {
+      display: none; /* start from here */
       z-index: 1;
     }
     #locationIcon {
@@ -284,6 +327,40 @@
     #jobNumber:hover {
       font-weight: bold;
     }
+    #smallScreenEmployer {
+      position: relative;
+      width: 80%;
+      height: 250px;
+      margin: auto;
+      border: 2px solid rgb(228, 228, 228);
+    }
+    #smallScreenEmployer h3 {
+      font-size: 22px;
+    }
+    #smallScreenEmployer h3:first-child {
+      margin-top: 3em;
+    }
+    #smallScreenEmployer button {
+      width: 350px;
+      height: 50px;
+      background-color: rgba(19, 19, 255, 0.8);
+      border: none;
+      border-radius: 300px;
+      padding: 0 2rem 0 2rem;
+      color: white;
+      font-weight: bold;
+    }
+    #smallScreenEmployer button:hover {
+      background-color: rgb(0, 0, 228);
+    }
+    #smallScreenEmployerLine {
+      position: absolute;
+      top: 1em;
+      left: 2.5%;
+      width: 95%;
+      height: 8px;
+      background-color:rgb(255, 61, 61);
+    }
     
     #languageArea {
       font-size: 13px;
@@ -327,17 +404,15 @@
           <div id='what'>
             <h2>what</h2>
             <p>job title, keywords, or company</p>
-            <input type='text' name='q' id='inputBoxWhat' placeholder='Software Developer'><span class='searchIcon'></span>
+            <input type='text' name='q' id='inputBoxWhat' placeholder='Software Developer'><span class='searchIcon'></span><span class='deleteIcon'>×</span>
           </div>
-          <div id='where_submit'>
-            <div id='where'>
-              <h2>where</h2>
-              <p>city or province</p>
-              <input type='text' name='l' id='inputBoxWhere' placeholder='Toronto, ON'><span id='locationIcon' title='To get an identical location icon to the one in the real Indeed.ca a scaling along the diagonal is feasible'></span>
-            </div>
-            <div id='submit'>
-              <input type='submit' id='findJobsButton' value='Find Jobs'>
-            </div>
+          <div id='where'>
+            <h2>where</h2>
+            <p>city or province</p>
+            <input type='text' name='l' id='inputBoxWhere' placeholder='Toronto, ON'><span id='locationIcon' title='To get an identical location icon to the one in the real Indeed.ca a scaling along the diagonal is feasible'></span><span class='deleteIcon'>×</span>
+          </div>
+          <div id='submit'>
+            <input type='submit' id='findJobsButton' value='Find Jobs'>
           </div>
         </div>
       </form>
@@ -362,6 +437,12 @@
         <button class='popularSearchesButton' type='submit' name='q' value='Administrative Assistant'><span class='searchIcon'></span>Administrative Assistant</button>
       </form>
       <p><span id='jobNumber' title='Scrapy is required for crawling the number of new jobs'>12345</span> new <a href='https://ca.indeed.com/jobs'>jobs</a> in the last 7 days<br>Search job sites, newspapers, associations and company career pages.</p>
+      <div id='smallScreenEmployer'>
+        <h3>For Employers</h3>
+        <h3>Your next hire is here</h3>
+        <a href='https://employers.indeed.com/post-job?hl=en_CA&co=CA&isid=mobilehome&ikw=bigctabottom1&_ga=2.206570960.2122516639.1572637846-1582984752.1572129255'><button type='button'>Post a Job</button></a>
+        <span id='smallScreenEmployerLine'></span>
+      </div>
     </div>
   </main>
 
