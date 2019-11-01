@@ -13,6 +13,6 @@
         inputWhere.value = inputWhere.placeholder;
     }
     return inputWhat.value, inputWhere.value;
-}```//bug, submit info in placeholder by default
+}```//submit info in placeholder by default
 
 document.getElementById('switchToFrench').onclick = () => alert('French version is provided by Indeed instead of my coding');

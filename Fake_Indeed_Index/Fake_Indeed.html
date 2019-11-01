@@ -10,7 +10,12 @@
       display: flex;
       flex-direction: column;
       text-align: center;
+      min-width: 50%;
+      max-width: 100%;
     } 
+    /* @media screen and (min-width: 1080px) {
+      In the real Indeed.ca a totally different layout was designed for small-screen devices and computer's windowed mode
+    }*/
     a {
       text-decoration: none;
     }
@@ -267,7 +272,7 @@
       flex-wrap: wrap;
       margin: 0 auto 0 auto; 
       justify-content: center;
-      width: 55%;
+      width: 800px;
     }
     #popularSearchesArea p {
       font-size: 14px;
