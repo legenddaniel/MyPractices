@@ -1,18 +1,34 @@
-//With content: r/w changes, unfocus restores
-//Without content: no change
-//Icon with link but failed
-```if (document.getElementById('inputBoxWhat') != '') {
-    document.getElementById('inputBoxWhat').onchange = () => document.getElementsById('noDeleteIconWhat').id = 'deleteIconWhat';
-    document.getElementById('inputBoxWhat').onblur = () => document.getElementsById('deleteIconWhat').id = 'deleteIconWhat';
-}```
+$(document).ready(() => {
+    $('.deleteIcon').click(() => {
+        $('.deleteIcon').siblings('input').text('');
+    });
+    $('#inputBoxWhat').keyup(() => {
+        if ($('#inputBoxWhat').val() !== '') {
+            $('.deleteIcon:first').show();
+        } else {
+            $('.deleteIcon:first').hide();
+        }
+    });
+    $('#inputBoxWhat').blur(() => $('.deleteIcon:first').hide());
+    $('#inputBoxWhat').focus(() => {
+        if ($('#inputBoxWhat').val() !== '') {
+            $('.deleteIcon:first').show();
+        };
+    });
+    
+    $('#inputBoxWhere').keyup(() => {
+        if ($('#inputBoxWhere').val() !== '') {
+            $('.deleteIcon:eq(1)').show();
+        } else {
+            $('.deleteIcon:eq(1)').hide();
+        }
+    });
+    $('#inputBoxWhere').blur(() => $('.deleteIcon:eq(1)').hide());
+    $('#inputBoxWhere').focus(() => {
+        if ($('#inputBoxWhere').val() !== '') {
+            $('.deleteIcon:eq(1)').show();
+        };
+    });
 
-```const defaultSubmit = () => {
-    const [inputWhat, inputWhere] = [document.getElementById('q').replace(/s+/g, ''), document.getElementById('l').replace(/s+/g, '')];
-    if (!inputWhat.value && !inputWhere.value) {
-        inputWhat.value = inputWhat.placeholder;
-        inputWhere.value = inputWhere.placeholder;
-    }
-    return inputWhat.value, inputWhere.value;
-}```//submit info in placeholder by default
-
-document.getElementById('switchToFrench').onclick = () => alert('French version is provided by Indeed instead of my coding');
+    $('#switchToFrench').click(() => alert('French version is provided by Indeed instead of my coding'));
+});

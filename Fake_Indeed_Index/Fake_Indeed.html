@@ -1,13 +1,12 @@
-<!DOCTYPE HTML>
+<!DOCTYPE HTML> <!--I am sorry for the possible copyright infringement-->
 <html>
 <head>
   <meta charset='utf-8'>
   <title>Job search Canada | Indeed</title>
   <link rel='icon' href='Indeed_miniLogo.ico'>
-  <!--The bg-color of the icon here is white instead of clear which is the real Indeed.ca icon-->
-  <style> /* CSS effects may not display properly in Trident/EdgeHTML kernal browsers */
-    @media screen and (max-width: 1000px) { 
-      /* did not test for landscape display */
+  <style>
+  /* CSS effects may not display properly in Trident/EdgeHTML kernal browsers */
+    @media screen and (max-width: 1000px) {
       /*In the real Indeed.ca there is a different layout for mobile devices (from desktop windowed mode of the browser)*/
       #resumeNEmployer, #popularSearchesArea p, #languageArea {
         display: none;
@@ -63,7 +62,7 @@
     a:link, a:visited {
       color: currentColor;
     }
-    a:hover, #findJobsButton:hover, .popularSearchesButton:hover, #smallScreenEmployer button:hover {
+    a:hover, #findJobsButton:hover, .popularSearchesButton:hover, #smallScreenEmployer button:hover, .deleteIcon:hover {
       cursor: pointer;
     }
 
@@ -168,7 +167,7 @@
       border-color: rgb(228, 228, 228);
     }
     #searchBoxes {
-      display:flex;
+      display: flex;
       justify-content: center;
       margin-top: 5%;
       line-height: 0.3rem;
@@ -184,6 +183,7 @@
       font-size: 14px;
     }
     #what, #where {
+      position: relative;
       width: 400px;
       min-width: 400px;
       text-align: left;
@@ -211,8 +211,12 @@
       z-index: 1;
     }
     .deleteIcon {
-      display: none; /* start from here */
+      display: none;
+      position: absolute;
+      bottom: 20%;
+      right: 5.5%;
       z-index: 1;
+      font-size: 24px;
     }
     #locationIcon {
       position: absolute;
@@ -462,4 +466,6 @@
 </body>
 </html>
 
+
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <script type='text/javascript' src='Fake_Indeed.js'></script>
