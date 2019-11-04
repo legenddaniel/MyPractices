@@ -60,6 +60,9 @@
   a:hover, #findJobsButton:hover, .popularSearchesButton:hover, #smallScreenEmployer button:hover, .deleteIcon:hover {
     cursor: pointer;
   }
+  button, input {
+    outline: none;
+  }
 
   nav {
     height: 35px;

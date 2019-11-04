@@ -7,8 +7,6 @@ Features:
 
 3. I noticed that the real Indeed.ca may change their UI some times but slightly, and seems different devices might see different UIs at different time of visit.
 
-4. I found no reason why in some chromium-kernel browsers the input boxes might have double border effects when focused.
-
-5. Indeed made a different UI for mobile devices from common low-resolution screen/window display.
+4. Indeed made a different UI for mobile devices from common low-resolution screen/window display.
 
 Thanks for your inspection and I am getting better on it.
