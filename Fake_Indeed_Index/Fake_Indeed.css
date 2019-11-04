@@ -1,0 +1,379 @@
+@media screen and (max-width: 1000px) {
+    /*In the real Indeed.ca there is a different layout for mobile devices (from desktop windowed mode of the browser)*/
+    
+    /* CSS effects may not display properly in Trident/EdgeHTML kernel browsers */
+    
+    #resumeNEmployer, #popularSearchesArea p, #languageArea {
+      display: none;
+    }
+    #searchArea {
+      min-height: 400px;
+    }
+    #searchBoxes {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #what, #where, #submit {
+      margin-top: 1em;
+    }
+    #what {
+      margin-right: 12%;
+    }
+    #submit {
+      width: 100%;
+    }
+    #findJobsButton {
+      width: 400px;
+    }
+    #popularSearchesArea {
+      min-height: 600px;
+    }
+    #popularSearches {
+      max-width: 600px;
+    }
+    #navBot {
+      flex-direction: column;
+    }
+  }
+  @media screen and (min-width: 1000px) {
+    #smallScreenEmployer {
+      display: none;
+    }
+  }
+
+
+  body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    min-width: 50%;
+    max-width: 100%;
+  } 
+  a {
+    text-decoration: none;
+  }
+  a:link, a:visited {
+    color: currentColor;
+  }
+  a:hover, #findJobsButton:hover, .popularSearchesButton:hover, #smallScreenEmployer button:hover, .deleteIcon:hover {
+    cursor: pointer;
+  }
+
+  nav {
+    height: 35px;
+    display: flex;
+    width: 100%;
+    min-width: 1000px;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    border-width: 2px;
+    border-style: none none solid none;
+    border-color: rgb(228, 228, 228);
+    font-size: 14px;
+    color: rgb(107, 106, 106);
+  }
+  nav img {
+    height: 1rem;
+  }
+  nav a {
+    padding: 8px 1em 8px 1em;
+  }
+  #underlineByDefault {
+    border: 1px dashed currentColor;
+    border-bottom: 2px solid rgb(0, 0, 228);
+    color: black;
+  }
+  #underlineByDefault:hover {
+    font-weight: bold;
+  }
+  .withUnderlineHovering:hover {
+    border-bottom: 2px solid rgb(0, 0, 228, 0.6);
+    color: black;
+  }
+  #navLeft {
+    margin-left: 1rem;
+    margin-top: -1px;
+  }
+  #navRight {
+    -moz-margin: 12px 1rem 12px 0;
+    /*Codes above is not working*/
+    margin: 10px 1rem 10px 0;
+  }
+  #signIn {
+    border-width: 2px;
+    border-style: none solid none none;
+    border-color: rgb(228, 228, 228);
+    padding: 3px 1.5em 3px 1em;
+    color:rgb(0, 0, 220);
+  }
+  #EnIcon {
+    margin-left: 1.5em;
+    padding: 0.25em 0.5em 0.25em 0.5em;
+    background-color: rgb(228, 228, 228);
+    font-weight: bold;
+    color: black;
+    border-bottom: 1px dashed currentColor;
+  }
+  #EnIcon:hover {
+    font-weight: 500;
+    cursor:default;
+  }
+  #FrIcon {
+    border-width: 2px;
+    border-style: none solid none none;
+    border-color: rgb(228, 228, 228);
+    padding: 3px 1.5em 3px 0.5em;
+  }
+  #FrIcon:hover {
+    text-decoration: underline;
+  }
+  
+  .searchIcon {
+    position: absolute;
+    margin-left: -1.5em;
+    width: 10.5px;
+    height: 10.5px;
+    border-radius: 50%;
+    border: 1.5px solid rgb(168, 168, 168);
+    background-color: transparent;
+  }
+  .searchIcon::after {
+    position: absolute;
+    content: '';
+    width: 6px;
+    height: 1.5px;
+    top: 11px;
+    left: 9px;
+    transform: rotate(45deg);
+    background-color: rgb(168, 168, 168);
+  }
+  main a:hover, footer a:hover {
+    text-decoration: underline;
+  }
+  
+  #searchArea {
+    width: 100%;
+    height: 330px;
+    display: flex;
+    flex-direction: column;
+    border-width: 2px;
+    border-style: none none solid none;
+    border-color: rgb(228, 228, 228);
+  }
+  #searchBoxes {
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+    line-height: 0.3rem;
+  }
+  #searchBoxes h2 {
+    font-size: 22px;
+  }
+  #searchBoxes p {
+    font-size: 11px;
+    color: rgb(107, 106, 106);
+  }
+  #searchBoxes input {
+    font-size: 14px;
+  }
+  #what, #where {
+    position: relative;
+    width: 400px;
+    min-width: 400px;
+    text-align: left;
+  }
+  #what {
+    margin-left: 12%;
+  }
+  #what .searchIcon {
+    margin: 1em 0 0 -2em;
+    border-color: rgb(168, 168, 168);
+  }    
+  .inputBox {
+    position: relative;
+    width: 94%;
+    height: 38px;
+    border: 2px solid;
+    border-color: rgb(168, 168, 168);
+    border-radius: 5px;
+    padding-left: 1em;
+    background-color: transparent;
+  }
+  .inputBox:focus {
+    border-color: rgb(0, 0, 255, 0.7);
+    background-color: white;
+    z-index: 1;
+  }
+  .deleteIcon {
+    display: none;
+    position: absolute;
+    bottom: 20%;
+    right: 5.5%;
+    z-index: 1;
+    font-size: 24px;
+  }
+  #locationIcon {
+    position: absolute;
+    margin-left: -2em;
+    margin-top: 12px;
+    width: 10px;
+    height: 10px;
+    border: 1.5px solid rgb(0, 0, 0);
+    border-top-left-radius: 75%;
+    background-color: transparent;
+    transform: rotate(45deg);
+  }
+  #locationIcon::before {
+    position: absolute;
+    content: '';
+    width: 3px;
+    height: 3px;
+    top: 2.5px;
+    left: 2.5px;
+    border:1px solid rgb(0, 0, 0);
+    border-radius: 50%;
+    background-color: transparent;
+  }
+  #locationIcon::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 15px;
+    top: -2.5px;
+    left: -2.5px;
+    border: 1px dashed currentColor;
+    background-color: transparent;
+    transform: rotate(-45deg);
+  }
+  #locationIcon:hover {
+    transform: scale(1.2) rotate(45deg);
+  }
+  #submit {
+    align-self: flex-end;
+    margin-left: 1rem;
+  }
+  #findJobsButton {
+    height: 43px;
+    background-color: rgba(19, 19, 255, 0.8);
+    border: none;
+    border-radius: 300px;
+    padding: 0 2rem 0 2rem;
+    color: white;
+    font-weight: bold;
+  }
+  #findJobsButton:hover {
+    background-color: rgb(0, 0, 228);
+  }
+  #resumeNEmployer {
+    margin-top: 1rem;
+    color: rgb(107, 106, 106);
+  }
+  #resumeNEmployer a, #popularSearchesArea a, #languageArea a {
+    color:rgb(0, 0, 228, 0.8);
+  }
+  #resumeNEmployer a:hover, #popularSearchesArea a:hover, #languageArea a:hover {
+    color: rgb(0, 0, 228, 0.6);
+  }
+  
+  #popularSearchesArea {
+    width: 100%;
+    height: 300px;
+    border-width: 7px;
+    border-style: none none solid none;
+    border-color: rgb(255, 61, 61);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  #popularSearchesArea h2 {
+    font-size: 22px;
+    line-height: 1rem;
+  }
+  #popularSearchesTitle {
+    border-bottom: 1px dashed currentColor;
+  }
+  #popularSearchesTitle:hover {
+    font-weight: 500;
+  }
+  .popularSearchesButton {
+    font-size: 14px;
+    border: 2px solid;
+    border-color: rgb(228, 228, 228);
+    border-radius: 300px;
+    background-color: transparent;
+    display: inline-block;
+    padding: 1em 1em 1em 2.5em;
+    margin: 0.5em;
+  }
+  .popularSearchesButton:hover {
+    background-color: rgb(228, 228, 228, 0.2);
+  }
+  #popularSearches {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto 0 auto; 
+    justify-content: center;
+    width: 800px;
+  }
+  #popularSearchesArea p {
+    font-size: 14px;
+    color:rgb(107, 106, 106);
+  }
+  #jobNumber {
+    border-bottom: 1px dashed currentColor;
+  }
+  #jobNumber:hover {
+    font-weight: bold;
+  }
+  #smallScreenEmployer {
+    position: relative;
+    width: 80%;
+    height: 250px;
+    margin: auto;
+    border: 2px solid rgb(228, 228, 228);
+  }
+  #smallScreenEmployer h3 {
+    font-size: 22px;
+  }
+  #smallScreenEmployer h3:first-child {
+    margin-top: 3em;
+  }
+  #smallScreenEmployer button {
+    width: 350px;
+    height: 50px;
+    background-color: rgba(19, 19, 255, 0.8);
+    border: none;
+    border-radius: 300px;
+    padding: 0 2rem 0 2rem;
+    color: white;
+    font-weight: bold;
+  }
+  #smallScreenEmployer button:hover {
+    background-color: rgb(0, 0, 228);
+  }
+  #smallScreenEmployerLine {
+    position: absolute;
+    top: 1em;
+    left: 2.5%;
+    width: 95%;
+    height: 8px;
+    background-color:rgb(255, 61, 61);
+  }
+  
+  #languageArea {
+    font-size: 13px;
+  }
+  #navBot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+  }
+  #navBotLeft {
+    margin-left: 1rem;
+  }
+  #navBotRight {
+    margin-right: 1rem;
+  }

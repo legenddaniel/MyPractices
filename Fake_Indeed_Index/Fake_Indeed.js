@@ -1,34 +1,32 @@
 $(document).ready(() => {
-    $('.deleteIcon').click(() => {
-        $('.deleteIcon').siblings('input').text('');
-    });
-    $('#inputBoxWhat').keyup(() => {
-        if ($('#inputBoxWhat').val() !== '') {
-            $('.deleteIcon:first').show();
-        } else {
-            $('.deleteIcon:first').hide();
-        }
-    });
-    $('#inputBoxWhat').blur(() => $('.deleteIcon:first').hide());
-    $('#inputBoxWhat').focus(() => {
-        if ($('#inputBoxWhat').val() !== '') {
-            $('.deleteIcon:first').show();
-        };
-    });
-    
-    $('#inputBoxWhere').keyup(() => {
-        if ($('#inputBoxWhere').val() !== '') {
-            $('.deleteIcon:eq(1)').show();
-        } else {
-            $('.deleteIcon:eq(1)').hide();
-        }
-    });
-    $('#inputBoxWhere').blur(() => $('.deleteIcon:eq(1)').hide());
-    $('#inputBoxWhere').focus(() => {
-        if ($('#inputBoxWhere').val() !== '') {
-            $('.deleteIcon:eq(1)').show();
-        };
-    });
+    //Delete icon function
+    const deleteIcons = [$('#deleteIconWhat'), $('#deleteIconWhere')];
+    for (let deleteIcon of deleteIcons) {
+        deleteIcon.mousedown(function() {
+            $(this).prev().val('');
+        })
+    }
 
+    //Delete icon show/hide
+    const inputBoxes = [$('#inputBoxWhat'), $('#inputBoxWhere')];
+    for (let inputBox of inputBoxes) {
+        inputBox.keyup(function() {
+            if ($(this).val() !== '') {
+                $(this).next().show();
+            } else {
+                $(this).next().hide();
+            }
+        });
+        inputBox.blur(function() {
+            $(this).next().hide();
+        });
+        inputBox.focus(function() {
+            if ($(this).val() !== '') {
+                $(this).next().show();
+            };
+        });
+    }
+
+    //Without issue of 'this' we can use arrow function
     $('#switchToFrench').click(() => alert('French version is provided by Indeed instead of my coding'));
 });
