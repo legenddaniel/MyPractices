@@ -1,6 +1,6 @@
 This is my first attemp making a (kinda formal) webpage. 
 
-I promise all codes as well as icons were done on my own instead of either using libs/plugins or even copying online.
+I promise all codes as well as icons were done on my own instead of either using libs/plugins (except jQuery) or even copying online.
 
 Sorry for the possible bugs even though I have checked it OK. 
 

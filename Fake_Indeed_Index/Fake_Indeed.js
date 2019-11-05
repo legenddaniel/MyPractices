@@ -7,7 +7,7 @@ $(document).ready(() => {
         })
     }
 
-    //const prev() = next() = $(this).sibling('deleteIcon'/'inputBox')
+    //const prev() = next() = $(this).siblings('deleteIcon'/'inputBox')
 
     //Delete icon show/hide
     const inputBoxes = [$('#inputBoxWhat'), $('#inputBoxWhere')];
