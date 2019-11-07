@@ -1,8 +1,16 @@
+/* ---------------------------------------------------------------------------------------------------
+
+In the real Indeed.ca there is a different layout for mobile devices (from desktop windowed mode of the browser)
+    
+CSS effects may not display properly in Trident/EdgeHTML kernel browsers
+
+CamelCase works not well in CSS. I realize hyphen is better especially when involving Bootstrap 
+
+CSS pre-processors can be used
+
+--------------------------------------------------------------------------------------------------- */
+
 @media screen and (max-width: 1000px) {
-    /*In the real Indeed.ca there is a different layout for mobile devices (from desktop windowed mode of the browser)*/
-    
-    /* CSS effects may not display properly in Trident/EdgeHTML kernel browsers */
-    
     #resumeNEmployer, #popularSearchesArea p, #languageArea {
       display: none;
     }
@@ -44,10 +52,10 @@
 
 
   body {
-    height: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: 100%;
     min-width: 50%;
     max-width: 100%;
   } 
@@ -65,13 +73,13 @@
   }
 
   nav {
-    height: 35px;
-    display: flex;
-    width: 100%;
-    min-width: 1000px;
+    display: flex;    
     justify-content: space-between;
     align-items: center;
-    text-align: left;
+    text-align: left;    
+    height: 35px;
+    width: 100%;
+    min-width: 1000px;
     border-width: 2px;
     border-style: none none solid none;
     border-color: rgb(228, 228, 228);
@@ -106,29 +114,29 @@
     margin: 10px 1rem 10px 0;
   }
   #signIn {
+    padding: 3px 1.5em 3px 1em;    
     border-width: 2px;
     border-style: none solid none none;
     border-color: rgb(228, 228, 228);
-    padding: 3px 1.5em 3px 1em;
     color:rgb(0, 0, 220);
   }
   #EnIcon {
     margin-left: 1.5em;
     padding: 0.25em 0.5em 0.25em 0.5em;
+    border-bottom: 1px dashed currentColor;    
     background-color: rgb(228, 228, 228);
     font-weight: bold;
     color: black;
-    border-bottom: 1px dashed currentColor;
   }
   #EnIcon:hover {
     font-weight: 500;
-    cursor:default;
+    cursor: default;
   }
   #FrIcon {
+    padding: 3px 1.5em 3px 0.5em;    
     border-width: 2px;
     border-style: none solid none none;
     border-color: rgb(228, 228, 228);
-    padding: 3px 1.5em 3px 0.5em;
   }
   #FrIcon:hover {
     text-decoration: underline;
@@ -139,29 +147,29 @@
     margin-left: -1.5em;
     width: 10.5px;
     height: 10.5px;
+    border: 1.5px solid rgb(168, 168, 168);    
     border-radius: 50%;
-    border: 1.5px solid rgb(168, 168, 168);
     background-color: transparent;
   }
   .searchIcon::after {
     position: absolute;
-    content: '';
-    width: 6px;
-    height: 1.5px;
+    content: '';    
     top: 11px;
     left: 9px;
+    width: 6px;
+    height: 1.5px;
+    background-color: rgb(168, 168, 168);    
     transform: rotate(45deg);
-    background-color: rgb(168, 168, 168);
   }
   main a:hover, footer a:hover {
     text-decoration: underline;
   }
   
   #searchArea {
+    display: flex;
+    flex-direction: column;    
     width: 100%;
     height: 330px;
-    display: flex;
-    flex-direction: column;
     border-width: 2px;
     border-style: none none solid none;
     border-color: rgb(228, 228, 228);
@@ -199,10 +207,10 @@
     position: relative;
     width: 94%;
     height: 38px;
+    padding-left: 1em;    
     border: 2px solid;
     border-color: rgb(168, 168, 168);
     border-radius: 5px;
-    padding-left: 1em;
     background-color: transparent;
   }
   .inputBox:focus {
@@ -211,8 +219,8 @@
     z-index: 1;
   }
   .deleteIcon {
+    position: absolute;    
     display: none;
-    position: absolute;
     bottom: 20%;
     right: 5.5%;
     z-index: 1;
@@ -232,21 +240,21 @@
   #locationIcon::before {
     position: absolute;
     content: '';
+    top: 2.5px;
+    left: 2.5px;    
     width: 3px;
     height: 3px;
-    top: 2.5px;
-    left: 2.5px;
     border:1px solid rgb(0, 0, 0);
     border-radius: 50%;
     background-color: transparent;
   }
   #locationIcon::after {
     position: absolute;
-    content: '';
-    width: 15px;
-    height: 15px;
+    content: '';    
     top: -2.5px;
     left: -2.5px;
+    width: 15px;
+    height: 15px;
     border: 1px dashed currentColor;
     background-color: transparent;
     transform: rotate(-45deg);
@@ -259,11 +267,11 @@
     margin-left: 1rem;
   }
   #findJobsButton {
-    height: 43px;
-    background-color: rgba(19, 19, 255, 0.8);
+    height: 43px;    
+    padding: 0 2rem 0 2rem;
     border: none;
     border-radius: 300px;
-    padding: 0 2rem 0 2rem;
+    background-color: rgba(19, 19, 255, 0.8);
     color: white;
     font-weight: bold;
   }
@@ -282,14 +290,14 @@
   }
   
   #popularSearchesArea {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    
     width: 100%;
     height: 300px;
     border-width: 7px;
     border-style: none none solid none;
     border-color: rgb(255, 61, 61);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
   }
   #popularSearchesArea h2 {
     font-size: 22px;
@@ -302,24 +310,24 @@
     font-weight: 500;
   }
   .popularSearchesButton {
-    font-size: 14px;
+    display: inline-block;
+    padding: 1em 1em 1em 2.5em;
+    margin: 0.5em;    
     border: 2px solid;
     border-color: rgb(228, 228, 228);
     border-radius: 300px;
     background-color: transparent;
-    display: inline-block;
-    padding: 1em 1em 1em 2.5em;
-    margin: 0.5em;
+    font-size: 14px;
   }
   .popularSearchesButton:hover {
     background-color: rgb(228, 228, 228, 0.2);
   }
   #popularSearches {
     display: flex;
+    justify-content: center;   
     flex-wrap: wrap;
+    width: 800px;   
     margin: 0 auto 0 auto; 
-    justify-content: center;
-    width: 800px;
   }
   #popularSearchesArea p {
     font-size: 14px;
@@ -347,10 +355,10 @@
   #smallScreenEmployer button {
     width: 350px;
     height: 50px;
-    background-color: rgba(19, 19, 255, 0.8);
+    padding: 0 2rem 0 2rem;
     border: none;
     border-radius: 300px;
-    padding: 0 2rem 0 2rem;
+    background-color: rgba(19, 19, 255, 0.8);
     color: white;
     font-weight: bold;
   }

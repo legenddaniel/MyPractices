@@ -15,4 +15,6 @@ Features:
 
 4. Indeed made a different UI for mobile devices from common low-resolution screen/window display.
 
+5. In the real Indeed when the user submits info through the #findJobButton the values in the input boxes are saved and showing in the #popularSearchesArea as search history.
+
 Thanks for your inspection and I am getting better on it.
