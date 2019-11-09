@@ -24,5 +24,5 @@ $(() => {
     });
 
     //Without issue of 'this' we can use arrow function
-    $('#switchToFrench').click(() => alert('French version is provided by Indeed instead of my coding'));
+    $('#switchToFrench').on('click', () => alert('French version is provided by Indeed instead of my coding'));
 });
