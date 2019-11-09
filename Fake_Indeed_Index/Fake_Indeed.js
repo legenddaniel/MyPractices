@@ -8,11 +8,7 @@ $(() => {
 
     //Delete icon show/hide
     $('.inputBox').keyup(function() {
-        if ($(this).val() !== '') {
-            $(this).next().show();
-        } else {
-            $(this).next().hide();
-        }
+        $(this).val() !== ''? $(this).next().show() : $(this).next().hide();
     });
     $('.inputBox').blur(function() {
         $(this).next().hide();
@@ -23,6 +19,6 @@ $(() => {
         };
     });
 
-    //Without issue of 'this' we can use arrow function
+    //Without issue of 'this' we can use arrow function, but would better unify the format (ES5/ES6)
     $('#switchToFrench').on('click', () => alert('French version is provided by Indeed instead of my coding'));
 });
