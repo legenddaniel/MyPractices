@@ -1,4 +1,4 @@
-$(document).ready(() => {
+$(() => {
     //Delete icon function
     $('.deleteIcon').mousedown(function() {
         $(this).prev().val('');
