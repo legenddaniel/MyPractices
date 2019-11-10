@@ -3,7 +3,7 @@ $(() => {
     $('.deleteIcon').mousedown(function() {
         $(this).prev().val('');
     })
-
+    
     //const prev() = next() = $(this).siblings('deleteIcon'/'inputBox')
 
     //Delete icon show/hide
