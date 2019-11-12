@@ -1,8 +1,12 @@
 <!DOCTYPE HTML>
 <!--I am sorry for the possible copyright infringement-->
 <html>
+
 <head>
   <title>Job search Canada | Indeed</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel='icon' href='Indeed_miniLogo.ico'>
   <link rel='stylesheet' type='text/css' href='Fake_Indeed.css'>
 </head>
@@ -12,32 +16,41 @@
   <nav>
     <div id='navLeft'>
       <a href='https://www.indeed.ca/?from=gnav-homepage'><img src='Indeed_logo.png' alt='Indeed_logo'></a>
-      <a href='https://ca.indeed.com/?from=gnav-homepage' id='underlineByDefault' title='In real Indeed.ca this is focused by default and the hyperlink is available'>Find jobs</a>
+      <a href='https://ca.indeed.com/?from=gnav-homepage' id='underlineByDefault'
+        title='In real Indeed.ca this is focused by default and the hyperlink is available'>Find jobs</a>
       <a href='http://ca.indeed.com/companies?from=gnav-homepage' class='withUnderlineHovering'>Company reviews</a>
       <a href='http://ca.indeed.com/salaries?from=gnav-homepage' class='withUnderlineHovering'>Find salaries</a>
     </div>
     <div id='navRight'>
-      <a href='http://ca.indeed.com/promo/resume?from=gnav-homepage' class='withUnderlineHovering'>Upload your resume</a>
-      <a href='https://secure.indeed.com/account/login?hl=en_CA&co=CA&continue=https%3A%2F%2Fca.indeed.com%2F%3Ffrom%3Dgnav-homepage&tmpl=desktop&service=my&from=gnav-util-homepage&_ga=2.241113477.763446571.1572144544-37857142.1572144544' id='signIn'><b>Sign in</b></a>
-      <a href='https://ca.indeed.com/?from=gnav-homepage&hl=en' id='EnIcon' title='In real Indeed.ca this is focused by default but the hyperlink is unavailable; only when focused does the grey bg-color work' onclick='return false'>En</a>
+      <a href='http://ca.indeed.com/promo/resume?from=gnav-homepage' class='withUnderlineHovering'>Upload your
+        resume</a>
+      <a href='https://secure.indeed.com/account/login?hl=en_CA&co=CA&continue=https%3A%2F%2Fca.indeed.com%2F%3Ffrom%3Dgnav-homepage&tmpl=desktop&service=my&from=gnav-util-homepage&_ga=2.241113477.763446571.1572144544-37857142.1572144544'
+        id='signIn'><b>Sign in</b></a>
+      <a href='https://ca.indeed.com/?from=gnav-homepage&hl=en' id='EnIcon'
+        title='In real Indeed.ca this is focused by default but the hyperlink is unavailable; only when focused does the grey bg-color work'
+        onclick='return false'>En</a>
       <a href='https://emplois.ca.indeed.com/?from=gnav-homepage&hl=fr' id='FrIcon'>Fr</a>
-      <a href='http://ca.indeed.com/hire?co=CA&hl=en&from=gnav-menu-homepage&ikw=gnav-header-hire&isid=employerlink-CA' class='withUnderlineHovering'>Employers/Post job</a>
+      <a href='http://ca.indeed.com/hire?co=CA&hl=en&from=gnav-menu-homepage&ikw=gnav-header-hire&isid=employerlink-CA'
+        class='withUnderlineHovering'>Employers/Post job</a>
     </div>
   </nav>
-  
+
   <main>
     <div id='searchArea'>
-      <form action='https://ca.indeed.com/jobs' method='get'> 
+      <form action='https://ca.indeed.com/jobs' method='get'>
         <div id='searchBoxes'>
           <div id='what'>
             <h2>what</h2>
             <p>job title, keywords, or company</p>
-            <input type='text' name='q' class='inputBox' placeholder='Software Developer'><span class='deleteIcon'>×</span><span class='searchIcon'></span>
+            <input type='text' name='q' class='inputBox' placeholder='Software Developer'><span
+              class='deleteIcon'>×</span><span class='searchIcon'></span>
           </div>
           <div id='where'>
             <h2>where</h2>
             <p>city or province</p>
-            <input type='text' name='l' class='inputBox' placeholder='Toronto, ON'><span class='deleteIcon'>×</span><span id='locationIcon' title='To get an identical location icon to the one in the real Indeed.ca a scaling along the diagonal is feasible'></span>
+            <input type='text' name='l' class='inputBox' placeholder='Toronto, ON'><span
+              class='deleteIcon'>×</span><span id='locationIcon'
+              title='To get an identical location icon to the one in the real Indeed.ca a scaling along the diagonal is feasible'></span>
           </div>
           <div id='submit'>
             <input type='submit' id='findJobsButton' value='Find Jobs'>
@@ -45,30 +58,48 @@
         </div>
       </form>
       <div id='resumeNEmployer'>
-        <p><a href='https://my.indeed.com/resume?from=hp&subfrom=rezprmstd&trk.origin=hp&trk.variant=rezprmstd&trk.tk=1do5hsd7ahea3800&co=CA&hl=en_CA&obo=https%3A%2F%2Fwww.indeed.ca'><b>Upload your resume</b></a> - It only takes a few seconds</p>
+        <p><a
+            href='https://my.indeed.com/resume?from=hp&subfrom=rezprmstd&trk.origin=hp&trk.variant=rezprmstd&trk.tk=1do5hsd7ahea3800&co=CA&hl=en_CA&obo=https%3A%2F%2Fwww.indeed.ca'><b>Upload
+              your resume</b></a> - It only takes a few seconds</p>
         <p><a href='https://ca.indeed.com/hire'><b>Employers: Post a job</b></a> - Your next hire is here</p>
       </div>
     </div>
 
     <div id='popularSearchesArea'>
-      <h2><span id='popularSearchesTitle' title='The color of the text in the buttons should change after visit in the real Indeed.ca. If new page is opened on current page (i.e. just click it), onpagehide/onunload event works (depends on if cache is needed)'>Popular Searches</span></h2>
+      <h2><span id='popularSearchesTitle'
+          title='The color of the text in the buttons should change after visit in the real Indeed.ca. If new page is opened on current page (i.e. just click it), onpagehide/onunload event works (depends on if cache is needed)'>Popular
+          Searches</span></h2>
       <form action='https://ca.indeed.com/jobs' method='get' id='popularSearches'>
-        <button class='popularSearchesButton' type='submit' name='q' value='Accounting'><span class='searchIcon'></span>Accounting</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Call Center'><span class='searchIcon'></span>Call Center</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Developer'><span class='searchIcon'></span>Developer</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Security Guard'><span class='searchIcon'></span>Security Guard</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Software Engineer'><span class='searchIcon'></span>Software Engineer</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Driver'><span class='searchIcon'></span>Driver</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Data Analyst'><span class='searchIcon'></span>Data Analyst</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Sales Associate'><span class='searchIcon'></span>Sales Associate</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Finance'><span class='searchIcon'></span>Finance</button>
-        <button class='popularSearchesButton' type='submit' name='q' value='Administrative Assistant'><span class='searchIcon'></span>Administrative Assistant</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Accounting'><span
+            class='searchIcon'></span>Accounting</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Call Center'><span
+            class='searchIcon'></span>Call Center</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Developer'><span
+            class='searchIcon'></span>Developer</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Security Guard'><span
+            class='searchIcon'></span>Security Guard</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Software Engineer'><span
+            class='searchIcon'></span>Software Engineer</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Driver'><span
+            class='searchIcon'></span>Driver</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Data Analyst'><span
+            class='searchIcon'></span>Data Analyst</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Sales Associate'><span
+            class='searchIcon'></span>Sales Associate</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Finance'><span
+            class='searchIcon'></span>Finance</button>
+        <button class='popularSearchesButton' type='submit' name='q' value='Administrative Assistant'><span
+            class='searchIcon'></span>Administrative Assistant</button>
       </form>
-      <p><span id='jobNumber' title='Scrapy is required for crawling the number of new jobs'>12345</span> new <a href='https://ca.indeed.com/jobs'>jobs</a> in the last 7 days<br>Search job sites, newspapers, associations and company career pages.</p>
+      <p><span id='jobNumber' title='Scrapy is required for crawling the number of new jobs'>12345</span> new <a
+          href='https://ca.indeed.com/jobs'>jobs</a> in the last 7 days<br>Search job sites, newspapers, associations
+        and company career pages.</p>
       <div id='smallScreenEmployer'>
         <h3>For Employers</h3>
         <h3>Your next hire is here</h3>
-        <a href='https://employers.indeed.com/post-job?hl=en_CA&co=CA&isid=mobilehome&ikw=bigctabottom1&_ga=2.206570960.2122516639.1572637846-1582984752.1572129255'><button type='button'>Post a Job</button></a>
+        <a
+          href='https://employers.indeed.com/post-job?hl=en_CA&co=CA&isid=mobilehome&ikw=bigctabottom1&_ga=2.206570960.2122516639.1572637846-1582984752.1572129255'><button
+            type='button'>Post a Job</button></a>
         <span id='smallScreenEmployerLine'></span>
       </div>
     </div>
@@ -77,10 +108,16 @@
   <footer>
     <div id='languageArea'>
       <p>Indeed est aussi disponible en <a href='https://emplois.ca.indeed.com/' id='switchToFrench'>français</a></p>
-    </div> 
+    </div>
     <div id='navBot'>
       <div id='navBotLeft'>
-        <p><a href='https://www.hiringlab.org/en-ca/?from=HP2'>Hiring Lab</a> - <a href='https://www.indeed.ca/browsejobs?from=HP2'>Browse Jobs</a> - <a href='https://www.indeed.ca/companies?from=HP2'>Browse Companies</a> - <a href='https://www.indeed.ca/salaries?from=HP2'>Salaries</a> - <a href='https://www.indeed.jobs/?from=HP2'>Work at Indeed</a> - <a href='https://www.indeed.ca/intl/en/about.html?from=HP2'>About</a> - <a href='https://indeed.zendesk.com/hc/en-ca?from=HP2'>Help Centre</a></p>
+        <p><a href='https://www.hiringlab.org/en-ca/?from=HP2'>Hiring Lab</a> - <a
+            href='https://www.indeed.ca/browsejobs?from=HP2'>Browse Jobs</a> - <a
+            href='https://www.indeed.ca/companies?from=HP2'>Browse Companies</a> - <a
+            href='https://www.indeed.ca/salaries?from=HP2'>Salaries</a> - <a
+            href='https://www.indeed.jobs/?from=HP2'>Work at Indeed</a> - <a
+            href='https://www.indeed.ca/intl/en/about.html?from=HP2'>About</a> - <a
+            href='https://indeed.zendesk.com/hc/en-ca?from=HP2'>Help Centre</a></p>
       </div>
       <div id='navBotRight'>
         <p>&copy; 2019 Indeed <a href='https://www.indeed.ca/legal'>Cookies, Privacy and Terms</a></p>
@@ -92,4 +129,5 @@
   <script src='Fake_Indeed.js'></script>
 
 </body>
+
 </html>

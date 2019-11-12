@@ -1,19 +1,19 @@
 $(() => {
     //Delete icon function
-    $('.deleteIcon').mousedown(function() {
+    $('.deleteIcon').mousedown(function () {
         $(this).prev().val('');
     })
-    
+
     //const prev() = next() = $(this).siblings('deleteIcon'/'inputBox')
 
     //Delete icon show/hide
-    $('.inputBox').keyup(function() {
-        $(this).val() !== ''? $(this).next().show() : $(this).next().hide();
+    $('.inputBox').keyup(function () {
+        $(this).val() !== '' ? $(this).next().show() : $(this).next().hide();
     });
-    $('.inputBox').blur(function() {
+    $('.inputBox').blur(function () {
         $(this).next().hide();
     });
-    $('.inputBox').focus(function() {
+    $('.inputBox').focus(function () {
         if ($(this).val() !== '') {
             $(this).next().show();
         };
