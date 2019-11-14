@@ -1,0 +1,27 @@
+Sync: 上传完成。Gist ID:4423e367713d9962adb74fac146042c8。请复制这个 ID 并将其用于其他设备来下载配置
+
+background-image
+
+检查各元素display
+
+浮动 行内块 flex
+
+------------------------------------------------------------------
+一般先设置body内外边距为0
+
+给元素设置背景色查看display类型
+三种元素显示可变，根据是否同行显示和调整大小设置display
+
+float元素之间没有空隙
+
+盒子内部：padding content
+盒子外部：border margin 
+padding影响盒子实际大小，除非没有设置width
+border影响盒子感观大小
+
+子元素margin使非fixed/absolute父元素margin塌陷：子元素overflow: hidden
+
+inline不能设置宽高和垂直方向padding和margin，请设置inline-block
+
+行内文字垂直居中：文字line-height = height
+行内文字水平居中：盒子text-align
