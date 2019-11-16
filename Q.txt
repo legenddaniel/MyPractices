@@ -21,6 +21,7 @@ input type
 属性选择器 input[value]
 
 ------------------------------------------------------------------
+
 布局 位置 大小边框 内容 其他
 
 一般先设置body内外边距为0
@@ -51,3 +52,15 @@ inline不能设置宽高和垂直方向padding和margin，请设置inline-block�
 图片底边框空白：vertical-align：非baseline
 
 悬停a时对b操作：a:hover b{} 或 a:hover + b{}
+
+------------------------------------------------------------------
+
+调用变量作为Object内的查找ID需用bracket
+
+赋值直接=（赋值指的是赋给变量value而不是创建变量）
+解构赋值 let [a, b, c] = [1, 2, 3]
+
+X在Object[X]中指具体value，Array[X]中指顺序
+换句话说，access Object 中的value需要具体的值或变量名，access Array 中的value可用序号
+
+闭包：通过调用使用了父函数变量的子函数使父函数内的局部变量全局可用？
