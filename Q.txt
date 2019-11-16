@@ -2,26 +2,52 @@ Sync: 上传完成。Gist ID:4423e367713d9962adb74fac146042c8。请复制这个 
 
 background-image
 
-检查各元素display
+检查各元素display和权重
 
 浮动 行内块 flex
 
+导航栏用li
+
+字体图标
+
+inputbox padding
+
+logo vertical align
+
+cursor无需设置伪类
+
+input type
+
+属性选择器 input[value]
+
 ------------------------------------------------------------------
+布局 位置 大小边框 内容 其他
+
 一般先设置body内外边距为0
 
 给元素设置背景色查看display类型
 三种元素显示可变，根据是否同行显示和调整大小设置display
 
 float元素之间没有空隙
+float会压住标准流下方的盒子而不是内容，但是absolute/fixed会压住盒子及内容，可利用float做文字环绕
+relative指与自身原本（文档流中）位置的相对
+absolute指相对最近的有定位祖先元素的绝对
+一般开发：子绝父相
+
+z-index需要定位
 
 盒子内部：padding content
 盒子外部：border margin 
 padding影响盒子实际大小，除非没有设置width
 border影响盒子感观大小
 
-子元素margin使非fixed/absolute父元素margin塌陷：子元素overflow: hidden
+子元素margin使脱标父元素margin塌陷：子元素overflow: hidden
 
-inline不能设置宽高和垂直方向padding和margin，请设置inline-block
+inline不能设置宽高和垂直方向padding和margin，请设置inline-block或定位
 
 行内文字垂直居中：文字line-height = height
 行内文字水平居中：盒子text-align
+
+图片底边框空白：vertical-align：非baseline
+
+悬停a时对b操作：a:hover b{} 或 a:hover + b{}
