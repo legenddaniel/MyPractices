@@ -1,4 +1,4 @@
-function checkCashRegister(price, cash, cid) {
+const checkCashRegister = (price, cash, cid) => {
 
     const currency = {
         'PENNY': 0.01,

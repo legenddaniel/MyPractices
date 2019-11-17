@@ -1,4 +1,4 @@
-function convertToRoman(num) {
+const convertToRoman = num => {
 
     const converter = [
         { 'M': 1000 },
