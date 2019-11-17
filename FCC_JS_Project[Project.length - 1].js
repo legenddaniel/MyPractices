@@ -16,10 +16,9 @@ const checkCashRegister = (price, cash, cid) => {
     let status;
     let changeDue = cash - price;
     const cashCal = money => money.flat().filter(a => typeof a === 'number').reduce((a, b) => a + b);
-    const total = cashCal(cid);
     cid.reverse();
 
-    if (changeDue > total) {
+    if (changeDue > cashCal(cid)) {
         status = "INSUFFICIENT_FUNDS";
     }
 
@@ -41,7 +40,7 @@ const checkCashRegister = (price, cash, cid) => {
         }
     }
 
-    if (!changeDue && cashCal(change) === total) {
+    if (!changeDue && cashCal(change) === cachCal(cid)) {
         status = "CLOSED";
         change = cid.reverse();
     } else if (changeDue) {
