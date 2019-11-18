@@ -4,6 +4,8 @@ Ubuntu
 
 Powershell git
 
+vscode技巧
+
 ------------------------------------------------------------------
 
 background-image
@@ -14,7 +16,7 @@ background-image
 
 导航栏用li
 
-字体图标
+字体图标 伪元素
 
 inputbox padding
 
@@ -26,7 +28,12 @@ input type
 
 属性选择器 input[value]
 
+seo优化：title，description，keywords
+
 ------------------------------------------------------------------
+
+nav指有导航性质的div，不一定只是顶部导航栏
+为了实现多级导航，一般nav嵌套ul和li
 
 布局 位置 大小边框 内容 其他
 
@@ -34,6 +41,7 @@ input type
 
 给元素设置背景色查看display类型
 三种元素显示可变，根据是否同行显示和调整大小设置display
+display: none ↔ block
 
 float元素之间没有空隙
 float会压住标准流下方的盒子而不是内容，但是absolute/fixed会压住盒子及内容，可利用float做文字环绕
@@ -47,10 +55,14 @@ z-index需要定位
 盒子外部：border margin 
 padding影响盒子实际大小，除非没有设置width
 border影响盒子感观大小
+可通过设置box-sizing转换盒子大小计算方式
+
+子元素在父元素中心：top50%, left50%, translate(-50%,-50%)
 
 子元素margin使脱标父元素margin塌陷：子元素overflow: hidden
 
-inline不能设置宽高和垂直方向padding和margin，请设置inline-block或定位
+inline不能设置宽高和垂直方向padding和margin，请设置inline-block或定位，translate无效
+伪元素是元素的子盒子，有行内元素的属性
 
 行内文字垂直居中：文字line-height = height
 行内文字水平居中：盒子text-align
