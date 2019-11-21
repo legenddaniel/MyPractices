@@ -6,9 +6,11 @@ Powershell git
 
 vscode技巧
 
+移动端开发注意物理像素比
+
 ------------------------------------------------------------------
 
-background-image
+background-image background: url() no-repeat
 
 检查各元素display和权重
 
@@ -17,6 +19,8 @@ background-image
 导航栏用li
 
 字体图标 伪元素
+
+location icon自定义scale轴，或者matrix
 
 inputbox padding
 
@@ -69,7 +73,16 @@ inline不能设置宽高和垂直方向padding和margin，请设置inline-block�
 
 图片底边框空白：vertical-align：非baseline
 
+文字一行显示 white-space: nowrap
+
 悬停a时对b操作：a:hover b{} 或 a:hover + b{}
+
+animation: steps() 实现帧动画
+
+父元素perspective使子元素animation/transform有立体感过程感
+父元素transform-style: preserve-3d使子元素参与3d转换
+
+3D转换最好绕中心点旋转
 
 ------------------------------------------------------------------
 
