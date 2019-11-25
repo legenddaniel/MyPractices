@@ -8,33 +8,57 @@ vscode技巧
 
 移动端开发注意物理像素比
 
-------------------------------------------------------------------
+各种类型居中方式
 
-background-image background: url() no-repeat
+iframe很常用
 
-检查各元素display和权重
+dom设置样式用驼峰法，设置以后是行内样式，不知好不好
+
+css class常用命名
 
 浮动 行内块 flex
 
-导航栏用li
-
-字体图标 伪元素
-
-location icon自定义scale轴，或者matrix
-
-inputbox padding
-
-logo vertical align
-
-cursor无需设置伪类
-
-input type
-
-属性选择器 input[value]
-
-seo优化：title，description，keywords
+那些需要私有前缀
 
 ------------------------------------------------------------------
+
+× background-image background: url() no-repeat
+
+√ 检查各元素display和权重
+
+？导航栏用li
+
+？字体图标 伪元素
+
+√ location icon自定义scale轴，或者matrix
+
+√ inputbox padding
+
+× logo vertical align
+
+√ cursor无需设置伪类
+
+√ input type
+
+× 属性选择器 input[value]，类正则写法
+
+√ seo优化：title，description，keywords
+
+√ 小窗口优化
+
+移动端优化
+
+√ font size
+
+√ 缩放后inputbox不居中，searchArea上下动
+
+最小时某些字体省略号表示
+
+定位元素真正实现居中
+
+------------------------------------------------------------------
+
+媒体查询和需要相对父元素调整字体用em，其他时候用rem？
 
 nav指有导航性质的div，不一定只是顶部导航栏
 为了实现多级导航，一般nav嵌套ul和li
@@ -49,9 +73,13 @@ display: none ↔ block
 
 float元素之间没有空隙
 float会压住标准流下方的盒子而不是内容，但是absolute/fixed会压住盒子及内容，可利用float做文字环绕
+flex会使float相关属性失效
 relative指与自身原本（文档流中）位置的相对
 absolute指相对最近的有定位祖先元素的绝对
 一般开发：子绝父相
+
+父：align-items针对单行，align-content针对多行；子：align-self
+flex子项占父项比
 
 z-index需要定位
 
@@ -61,17 +89,19 @@ padding影响盒子实际大小，除非没有设置width
 border影响盒子感观大小
 可通过设置box-sizing转换盒子大小计算方式
 
-子元素在父元素中心：top50%, left50%, translate(-50%,-50%)
+定位的子元素在父元素中心：top50%, left50%, translate(-50%,-50%)
 
 子元素margin使脱标父元素margin塌陷：子元素overflow: hidden
 
-inline不能设置宽高和垂直方向padding和margin，请设置inline-block或定位，translate无效
+inline不能设置宽高和垂直方向padding和margin，请设置inline-block or 定位 or flex；translate无效
 伪元素是元素的子盒子，有行内元素的属性
 
 行内文字垂直居中：文字line-height = height
 行内文字水平居中：盒子text-align
 
-图片底边框空白：vertical-align：非baseline
+如果用rem，全局字体用%设置
+
+图片底边框空白：vertical-align：非baseline；flex下无效
 
 文字一行显示 white-space: nowrap
 
@@ -94,4 +124,15 @@ animation: steps() 实现帧动画
 X在Object[X]中指具体value，Array[X]中指顺序
 换句话说，access Object 中的value需要具体的值或变量名，access Array 中的value可用序号
 
-闭包：通过调用使用了父函数变量的子函数使父函数内的局部变量全局可用？
+闭包：通过调用使用了父函数变量的子函数使父函数内的局部变量全局可访问？
+
+惰性函数：通过函数内重写函数达到一次判断永久生效
+立即调用函数：隔离作用域并用闭包访问，但ES6有块级作用域
+
+this和currentTarget指向事件绑定者（函数调用者），event.target属性指向事件触发者
+诸如setTimeout等this指向window
+如果需要给多个元素绑定相同事件可利用冒泡原理给父元素设置事件委托，其他时候可stopPropagation()阻止冒泡
+
+$(document).ready() / $() = window.DOMContentLoaded
+
+先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准
