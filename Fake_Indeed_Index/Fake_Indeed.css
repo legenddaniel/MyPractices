@@ -1,30 +1,24 @@
 /* ---------------------------------------------------------------------------------------------------
 
-In the real Indeed.ca there is a different layout for mobile devices (from desktop windowed mode of the browser)
+In the real Indeed.ca there is a different layout for mobile devices
     
 CSS effects may not display properly in Trident/EdgeHTML kernel browsers
-
-CamelCase works not well in CSS. I realize hyphen is better especially when involving Bootstrap 
 
 CSS pre-processors can be used
 
 --------------------------------------------------------------------------------------------------- */
 
-@media screen and (max-width: 500px) {
-  
-}
-
 @media screen and (max-width: 1024px) {
   body {
     min-width: 500px;
   }
-  .resumeNEmployer, .popularSearchesArea p, .languageArea {
+  .resume-n-employer, .popular-container p, .language {
     display: none;
   }
-  .searchArea {
+  .search-container {
     min-height: 400px;
   }
-  .searchBoxes {
+  .search-boxes {
     flex-direction: column;
     align-items: center;
     margin-top: 2em !important;
@@ -40,28 +34,28 @@ CSS pre-processors can be used
     width: 100%;
     margin-top: 2em;
   }
-  .findJobsButton {
+  .find-job-btn {
     width: 490px;
     margin-left: -12px;
     font-size: 20px !important;
   }
-  .popularSearchesArea {
+  .popular-container {
     min-height: 600px;
   }
-  .popularSearchesArea h2 {
+  .popular-container h2 {
     margin-right: 15em;
   }
-  .popularSearches {
+  .popular {
     max-width: 500px;
     text-align: left;
   }
-  .navBot {
+  .nav-bot {
     flex-direction: column;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .smallScreenEmployer {
+  .s-employer {
     display: none;
   }
 }
@@ -85,7 +79,7 @@ a:link, a:visited {
   color: currentColor;
 }
 
-a, .findJobsButton, .popularSearchesButton, .smallScreenEmployer button, .deleteIcon {
+a, .find-job-btn, .popular-btn, .s-employer button, .delete-icon {
   cursor: pointer;
 }
 
@@ -116,25 +110,25 @@ nav a {
   padding: 8px 1em;
 }
 
-.navLeft a:nth-child(2) {
+.nav-left a:nth-child(2) {
   border-bottom: 2px solid rgb(0, 0, 228);
   color: black;
 }
 
-.withUnderlineHovering:hover {
+.with-underline-hovering:hover {
   border-bottom: 2px solid rgb(0, 0, 228, 0.6);
   color: black;
 }
 
-.navLeft {
+.nav-left {
   margin: -1px 0 0 1rem;
 }
 
-.navRight {
+.nav-right {
   margin: 10px 1rem 10px 0;
 }
 
-nav .signIn {
+nav .sign-in {
   padding: 3px 1.5em 3px 1em;
   border-width: 2px;
   border-style: none solid none none;
@@ -142,7 +136,7 @@ nav .signIn {
   color: rgb(0, 0, 220);
 }
 
-nav .EnIcon {
+nav .en-icon {
   margin-left: 1.5em;
   padding: 0.25em 0.5em;
   background-color: rgb(228, 228, 228);
@@ -151,19 +145,19 @@ nav .EnIcon {
   cursor: default;
 }
 
-.FrIcon {
+.fr-icon {
   padding: 3px 1.5em 3px 0.5em;
   border-width: 2px;
   border-style: none solid none none;
   border-color: rgb(228, 228, 228);
 }
 
-.FrIcon:hover {
+.fr-icon:hover {
   text-decoration: underline;
   color: black;
 }
 
-.searchIcon {
+.search-icon {
   position: absolute;
   margin-left: -1.5em;
   width: 10.5px;
@@ -173,7 +167,7 @@ nav .EnIcon {
   background-color: transparent;
 }
 
-.searchIcon::after {
+.search-icon::after {
   position: absolute;
   content: '';
   top: 11px;
@@ -188,7 +182,7 @@ main a:hover, footer a:hover {
   text-decoration: underline;
 }
 
-.searchArea {
+.search-container {
   display: flex;
   flex-direction: column;
   /* width: 100%; */
@@ -198,23 +192,23 @@ main a:hover, footer a:hover {
   border-color: rgb(228, 228, 228);
 }
 
-.searchBoxes {
+.search-boxes {
   display: flex;
   justify-content: center;
   margin-top: 5em;
   line-height: 0.3em;
 }
 
-.searchBoxes h2 {
+.search-boxes h2 {
   font-size: 22px;
 }
 
-.searchBoxes p {
+.search-boxes p {
   font-size: 11px;
   color: rgb(107, 106, 106);
 }
 
-.searchBoxes input {
+.search-boxes input {
   font-size: 14px;
 }
 
@@ -229,12 +223,12 @@ main a:hover, footer a:hover {
   margin-left: 12%;
 }
 
-.what .searchIcon {
+.what .search-icon {
   margin: 14px 0 0 -2em;
   border-color: rgb(168, 168, 168);
 }
 
-.inputBox {
+.inputbox {
   position: relative;
   width: 94%;
   height: 38px;
@@ -245,13 +239,13 @@ main a:hover, footer a:hover {
   background-color: transparent;
 }
 
-.inputBox:focus {
+.inputbox:focus {
   border-color: rgb(0, 0, 255, 0.7);
   background-color: white;
   z-index: 1;
 }
 
-.deleteIcon {
+.delete-icon {
   position: absolute;
   display: none;
   bottom: 20%;
@@ -260,7 +254,7 @@ main a:hover, footer a:hover {
   font-size: 24px;
 }
 
-.locationIcon {
+.location-icon {
   position: absolute;
   margin-left: -2em;
   margin-top: 14px;
@@ -274,7 +268,7 @@ main a:hover, footer a:hover {
   transform: matrix(0.49, 0.92, -0.49, 0.92, 0, 0);
 }
 
-.locationIcon::before {
+.location-icon::before {
   position: absolute;
   content: '';
   top: 2.5px;
@@ -286,7 +280,7 @@ main a:hover, footer a:hover {
   background-color: transparent;
 }
 
-.locationIcon::after {
+.location-icon::after {
   position: absolute;
   content: '';
   top: -2.5px;
@@ -298,7 +292,7 @@ main a:hover, footer a:hover {
   transform: rotate(-45deg) scaleX(1.75);
 }
 
-.locationIcon:hover {
+.location-icon:hover {
   transform: matrix(0.64, 1.06, -0.64, 1.06, 0, 0);
 }
 
@@ -307,7 +301,7 @@ main a:hover, footer a:hover {
   margin-left: 1em;
 }
 
-.findJobsButton {
+.find-job-btn {
   height: 43px;
   padding: 0 2rem;
   border: none;
@@ -317,24 +311,24 @@ main a:hover, footer a:hover {
   font-weight: bold;
 }
 
-.findJobsButton:hover {
+.find-job-btn:hover {
   background-color: rgb(0, 0, 228);
 }
 
-.resumeNEmployer {
+.resume-n-employer {
   margin-top: 1em;
   color: rgb(107, 106, 106);
 }
 
-.resumeNEmployer a, .popularSearchesArea a, .languageArea a {
+.resume-n-employer a, .popular-container a, .language a {
   color: rgb(0, 0, 228, 0.8);
 }
 
-.resumeNEmployer a:hover, .popularSearchesArea a:hover, .languageArea a:hover {
+.resume-n-employer a:hover, .popular-container a:hover, .language a:hover {
   color: rgb(0, 0, 228, 0.6);
 }
 
-.popularSearchesArea {
+.popular-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -345,20 +339,20 @@ main a:hover, footer a:hover {
   border-color: rgb(255, 61, 61);
 }
 
-.popularSearchesArea h2 {
+.popular-container h2 {
   font-size: 22px;
   line-height: 1rem;
 }
 
-.popularSearchesTitle {
-  border-bottom: 1px dashed currentColor;
-}
-
-.popularSearchesTitle:hover {
+.popular-container h2:hover {
   font-weight: 500;
 }
 
-.popularSearchesButton {
+.popular-container h2 span {
+  border-bottom: 1px dashed currentColor;
+}
+
+.popular-btn {
   padding: 1em 1em 1em 2.5em;
   margin: 0.5em 0.2em;
   border: 2px solid;
@@ -368,29 +362,29 @@ main a:hover, footer a:hover {
   font-size: 14px;
 }
 
-.popularSearchesButton:hover {
+.popular-btn:hover {
   background-color: rgb(228, 228, 228, 0.2);
 }
 
-.popularSearches {
+.popular {
   width: 800px;
   margin: 0 auto;
 }
 
-.popularSearchesArea p {
+.popular-container p {
   font-size: 14px;
   color: rgb(107, 106, 106);
 }
 
-.jobNumber {
+.job-number {
   border-bottom: 1px dashed currentColor;
 }
 
-.jobNumber:hover {
+.job-number:hover {
   font-weight: bold;
 }
 
-.smallScreenEmployer {
+.s-employer {
   position: relative;
   width: 80%;
   height: 250px;
@@ -398,15 +392,15 @@ main a:hover, footer a:hover {
   border: 2px solid rgb(228, 228, 228);
 }
 
-.smallScreenEmployer h3 {
+.s-employer h3 {
   font-size: 22px;
 }
 
-.smallScreenEmployer h3:first-child {
+.s-employer h3:first-child {
   margin-top: 3em;
 }
 
-.smallScreenEmployer button {
+.s-employer button {
   width: 350px;
   height: 50px;
   padding: 0 2rem;
@@ -418,11 +412,11 @@ main a:hover, footer a:hover {
   font-weight: bold;
 }
 
-.smallScreenEmployer button:hover {
+.s-employer button:hover {
   background-color: rgb(0, 0, 228);
 }
 
-.smallScreenEmployerLine {
+.s-employer-line {
   position: absolute;
   top: 1em;
   left: 2.5%;
@@ -431,20 +425,20 @@ main a:hover, footer a:hover {
   background-color: rgb(255, 61, 61);
 }
 
-.languageArea {
+.language {
   font-size: 13px;
 }
 
-.navBot {
+.nav-bot {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
 }
 
-.navBotLeft {
+.nav-bot-left {
   margin-left: 1rem;
 }
 
-.navBotRight {
+.nav-bot-right {
   margin-right: 1rem;
 }
