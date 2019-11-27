@@ -2,8 +2,6 @@ This is my first attemp making a (kinda formal) webpage.
 
 I promise all codes as well as icons were done on my own.
 
-Sorry for the possible bugs even though I have checked it OK. 
-
 Features:
     
     1. Indeed.ca index without sign-in.
