@@ -11,14 +11,31 @@
     <title>Roman Converter & Cash Register</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="Roman_Converter_Cash_Register.css">
 
 
 </head>
 
 <body>
-    <div class=""></div>
-    
-    
+    <div class="container text-center bg-dark">
+        <div class="tab-bar row justify-content-center">
+            <a class="tab-roman d-flex col-md-3 bg-info mt-5 justify-content-center" href="" data-toggle="collapse" data-target=".main-roman">
+                <!-- my-auto not working in ie -->
+                <h5 class="my-auto">Roman Converter</h5>
+            </a>
+            <a class="tab-cash d-flex col-md-3 bg-warning mt-5 justify-content-center" href="" data-toggle="collapse" data-target=".main-cash">
+                <h5 class="my-auto">Cash Register</h5>
+            </a>
+
+        </div>
+        <div class="main row flex-column align-items-center">
+            <!-- invisible here!!!!!!!!!!!!!!!! -->
+            <div class="main-info col-md-6 d-none">index</div>
+            <div class="main-roman col-md-6 bg-primary collapse" data-parent=".container">aaa</div>
+            <div class="main-cash col-md-6 bg-success collapse" data-parent=".container">bbb</div>
+        </div>
+    </div>
+
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
