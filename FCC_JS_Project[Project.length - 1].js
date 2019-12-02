@@ -25,11 +25,13 @@ const checkCashRegister = (price, cash, cid) => {
     for (let unit = 0; unit < cid.length; unit++) {
         change.push(cid[unit]);
         let need = currency[change[unit][0]] * Math.floor(changeDue / currency[change[unit][0]]);
-        if (need <= cid[unit][1]) {
-            change[unit][1] = need;
-        } else {
-            change[unit][1] = cid[unit][1];
-        }
+        change[unit][1] = (need <= cid[unit][1]) ? need : cid[unit][1];
+        // need <= cid[unit][1] ? change[unit][1] = need : change[unit][1] = cid[unit][1];
+        // if (need <= cid[unit][1]) {
+        //     change[unit][1] = need;
+        // } else {
+        //     change[unit][1] = cid[unit][1];
+        // }
         changeDue = Math.round((changeDue - change[unit][1]) * 100) / 100;
     }
 

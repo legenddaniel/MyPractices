@@ -22,46 +22,6 @@ css class常用命名
 
 考虑用sass/less重写
 
-× background-image background: url() no-repeat
-
-√ 检查各元素display和权重
-
-× 导航栏用li
-
-？字体图标 伪元素
-
-√ location icon自定义scale轴，或者matrix
-
-√ inputbox padding
-
-× logo vertical align
-
-√ cursor无需设置伪类
-
-√ input type
-
-× 属性选择器 input[value]，类正则写法
-
-√ seo优化：title，description，keywords
-
-√ 小窗口优化
-
-√ font size
-
-√ 缩放后inputbox不居中，searchArea上下动
-
-× 移动端优化
-
-× 最小时某些字体省略号表示
-
-× 定位元素真正实现居中
-
-√ 改class名
-
-√ 哪些属性需要私有前缀
-
-√ 缩放错位：popular按钮？
-
 缺陷：chrome内核缩放50%以下样式变乱，nav边框不对齐
 
 ------------------------------------------------------------------
@@ -124,6 +84,10 @@ animation: steps() 实现帧动画
 
 ------------------------------------------------------------------
 
+data-parent是被折叠内容共同的父元素
+
+------------------------------------------------------------------
+
 调用变量作为Object内的查找ID需用bracket
 
 赋值直接=（赋值指的是赋给变量value而不是创建变量）
@@ -132,7 +96,8 @@ animation: steps() 实现帧动画
 X在Object[X]中指具体value，Array[X]中指顺序
 换句话说，access Object 中的value需要具体的值或变量名，access Array 中的value可用序号
 
-闭包：通过调用使用了父函数变量的子函数使父函数内的局部变量全局可访问？
+闭包：将变量作用域从函数提高到全局，避免垃圾回收，this指向window
+有内存泄漏风险，只有当需要累积变量值才用
 
 惰性函数：通过函数内重写函数达到一次判断永久生效
 立即调用函数：隔离作用域并用闭包访问，但ES6有块级作用域
