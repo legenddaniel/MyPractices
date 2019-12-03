@@ -67,7 +67,7 @@ const convertToNum = roman => {
 
     const cacheRoman = roman.replace(/IX|XC|CM/g, item => reverseReplace[item]).replace(/IV|XL|CD/g, item => reverseReplace[item]).split('');
 
-    const num = cacheRoman.map(degit => converter[degit]).reduce((a, b) => a + b);
+    const num = cacheRoman.map(digit => converter[digit]).reduce((a, b) => a + b);
 
     return num;
 }
