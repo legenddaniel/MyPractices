@@ -105,10 +105,18 @@ X在Object[X]中指具体value，Array[X]中指顺序
 闭包：将变量作用域从函数提高到全局，避免垃圾回收，this指向window
 有内存泄漏风险，只有当需要累积变量值才用
 
+私有变量命名：this._name = name
+
 惰性函数：通过函数内重写函数达到一次判断永久生效
 立即调用函数：隔离作用域并用闭包访问，但ES6有块级作用域
 
-this和currentTarget指向事件绑定者（函数调用者），event.target属性指向事件触发者
+constructor存放不同属性/方法；prototype/__proto__存放相同方法
+prototype是构造函数属性，__proto__是对象属性，实例__proto__指向prototype，所有对象都有__proto__包括instance Object window
+若通过es5方式覆写prototype需要注意constructor的指向
+
+子类constructor(arguments) { super(arguments) }继承父类constructor(arguments)
+
+this和currentTarget指向事件绑定者（函数调用者）或实例，event.target属性指向事件触发者
 诸如setTimeout等this指向window
 如果需要给多个元素绑定相同事件可利用冒泡原理给父元素设置事件委托，其他时候可stopPropagation()阻止冒泡
 
