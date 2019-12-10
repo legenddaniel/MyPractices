@@ -94,6 +94,8 @@ aria和role
 
 ------------------------------------------------------------------
 
+es5参数是以（伪）数组arguments形式传递进function，arguments是局部变量，arguments只有数组的length和索引功能
+
 调用变量作为Object内的查找ID需用bracket
 
 赋值直接=（赋值指的是赋给变量value而不是创建变量）
@@ -113,6 +115,8 @@ X在Object[X]中指具体value，Array[X]中指顺序
 constructor存放不同属性/方法；prototype/__proto__存放相同方法
 prototype是构造函数属性，__proto__是对象属性，实例__proto__指向prototype，所有对象都有__proto__包括instance Object window
 若通过es5方式覆写prototype需要注意constructor的指向
+
+箭头函数不能作为constructor，也没有prototype，也不能作为generator
 
 子类constructor(arguments) { super(arguments) }继承父类constructor(arguments)
 
