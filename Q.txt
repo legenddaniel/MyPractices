@@ -94,6 +94,8 @@ aria和role
 
 ------------------------------------------------------------------
 
+for循环需要i--的时候可考虑while
+
 es5参数是以（伪）数组arguments形式传递进function，arguments是局部变量，arguments只有数组的length和索引功能
 
 调用变量作为Object内的查找ID需用bracket
