@@ -22,6 +22,12 @@ button 和 input 区别
 
 '&&' '||'  ',' 等运算符的妙用
 
+js加载，js引入
+
+为什么需要getter setter
+
+断点调试
+
 ------------------------------------------------------------------
 
 考虑用sass/less重写
@@ -102,6 +108,8 @@ aria和role
 
 for循环需要i--的时候可考虑while
 
+return空值终止函数，类似循环中break
+
 es5参数是以（伪）数组arguments形式传递进function，arguments是局部变量，arguments只有数组的length和索引功能
 
 调用变量作为Object内的查找ID需用bracket
@@ -134,4 +142,7 @@ this和currentTarget指向事件绑定者（函数调用者）或实例，event.
 
 $(document).ready() / $() = window.DOMContentLoaded
 
-先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准 
+先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准
+
+setInterval时间间隔为10毫秒以上的定值
+setTimeout执行父函数可实现动态时间间隔，可替代setInterval
