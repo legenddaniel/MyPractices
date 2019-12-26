@@ -116,6 +116,12 @@ for循环需要i--的时候可考虑while
 
 逻辑运算符运算式先将值转化为boolean，计算后再转化为原来的值返回
 
+'1'+1='11'	'1'-1=0		'1'+-1='1-1'	-1+'1'='-11'	'1'-(-1)=2		'a'-0=NaN
+也就是加号统一string，减号统一number，注意NaN也是number，与数据类型先后顺序无关，常用来'number'转number
+NaN !== NaN
+
+简单数据类型传值，引用数据类型传址
+
 return空值终止函数，类似循环中break
 
 es5参数是以（伪）数组arguments形式传递进function，arguments是局部变量，arguments只有数组的length和索引功能
@@ -158,3 +164,5 @@ setTimeout执行父函数可实现动态时间间隔，可替代setInterval
 ------------------------------------------------------------------
 
 toggle()中事件触发者和作用者最好不要是一个？
+
+typeof ?.val() === 'string'
