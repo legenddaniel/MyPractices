@@ -109,6 +109,8 @@ data-parent是被折叠内容共同的父元素
 
 data-target不应用链接样式，必须用href
 
+a class="btn" 效果等于 button class="btn-link"
+
 aria和role
 
 ------------------------------------------------------------------
@@ -124,6 +126,8 @@ for...in遍历keys，for...of遍历values，for...in可遍历对象
 NaN !== NaN
 
 简单数据类型传值，引用数据类型传址
+
+const声明变量的标识符identifier不可修改，但是对象or数组虽然不能重新赋值，但可通过__proto__的方法修改键&值
 
 return空值终止函数，类似循环中break
 
