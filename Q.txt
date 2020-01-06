@@ -135,6 +135,8 @@ es5参数是以（伪）数组arguments形式传递进function，arguments是局
 
 调用变量作为Object内的查找ID需用bracket
 
+模板字符串支持换行输出，类似pre效果
+
 赋值直接=（赋值指的是赋给变量value而不是创建变量）
 解构赋值 let [a, b, c] = [1, 2, 3]
 
@@ -173,3 +175,5 @@ setTimeout执行父函数可实现动态时间间隔，可替代setInterval
 toggle()中事件触发者和作用者最好不要是一个？
 
 typeof ?.val() === 'string'
+
+eq() 比 :eq 快很多，如果作为选择器末尾元素用eq()
