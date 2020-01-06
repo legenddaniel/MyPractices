@@ -8,12 +8,6 @@ vscode技巧
 
 移动端开发注意物理像素比
 
-各种类型居中方式
-
-iframe很常用
-
-css class常用命名
-
 浮动 行内块 flex
 
 button 和 input 区别
@@ -31,6 +25,8 @@ js加载，js引入
 callback → promise → async/await
 
 免费服务器，或nodejs搭建本地服务器
+
+readme
 
 ------------------------------------------------------------------
 
