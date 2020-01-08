@@ -107,6 +107,8 @@ data-target不应用链接样式，必须用href
 
 a class="btn" 效果等于 button class="btn-link"
 
+modal中插入的popover如果有按钮用a class="btn"？
+
 aria和role
 
 ------------------------------------------------------------------
