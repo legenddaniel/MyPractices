@@ -12,6 +12,10 @@ vscode技巧
 
 button 和 input 区别
 
+property和attribute区别
+
+jquery手册attr prop remove-
+
 '&&' '||'  ',' 等运算符的妙用
 
 js加载，js引入
@@ -94,6 +98,8 @@ inline不能设置宽高和垂直方向padding和margin，请设置inline-block 
 
 animation: steps() 实现帧动画
 
+多个transition用逗号隔开：width .5s, height .5s
+
 父元素perspective使子元素animation/transform有立体感过程感
 父元素transform-style: preserve-3d使子元素参与3d转换
 
@@ -175,3 +181,7 @@ toggle()中事件触发者和作用者最好不要是一个？
 typeof ?.val() === 'string'
 
 eq() 比 :eq 快很多，如果作为选择器末尾元素用eq()
+
+对html固有属性操作用prop，自定义属性用attr，prop无法操作自定义属性（如data-*），但attr可以操作固有属性
+对checkbox，select， readonly等状态元素用prop可返回boolean更方便
+移除html固有属性可用prop/attr('？', false)或removeattr，禁用removeprop因为会使固有属性永久不可用
