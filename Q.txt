@@ -183,5 +183,6 @@ typeof ?.val() === 'string'
 eq() 比 :eq 快很多，如果作为选择器末尾元素用eq()
 
 对html固有属性操作用prop，自定义属性用attr，prop无法操作自定义属性（如data-*），但attr可以操作固有属性
+selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defaultSelected用prop()
 对checkbox，select， readonly等状态元素用prop可返回boolean更方便
 移除html固有属性可用prop/attr('？', false)或removeattr，禁用removeprop因为会使固有属性永久不可用
