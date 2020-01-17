@@ -14,10 +14,6 @@ button 和 input 区别
 
 property和attribute区别
 
-jquery手册attr prop remove-
-
-'&&' '||'  ',' 等运算符的妙用
-
 js加载，js引入
 
 为什么需要getter setter
@@ -29,6 +25,8 @@ js加载，js引入
 callback → promise → async/await
 
 免费服务器，或nodejs搭建本地服务器
+
+前端代码规范
 
 readme
 
@@ -130,6 +128,8 @@ for...in遍历keys，for...of遍历values，for...in可遍历对象
 NaN !== NaN
 
 简单数据类型传值，引用数据类型传址
+
+变化的变量值：函数返回，固定的变量值：直接赋值
 
 const声明变量的标识符identifier不可修改，但是对象or数组虽然不能重新赋值，但可通过__proto__的方法修改键&值
 
