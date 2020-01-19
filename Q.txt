@@ -28,27 +28,38 @@ callback → promise → async/await
 
 前端代码规范
 
+编程思想
+
 readme
+
+为何只操作栈内存不操作堆内存
 
 ------------------------------------------------------------------
 
 考虑用sass/less重写
 
-location默认value是当前城市
-
 缺陷：chrome内核缩放50%以下样式变乱，nav边框不对齐
 
-------------------------------------------------------------------
+-----------------------------html--------------------------------
+
 js 添加的是行内样式
 
 用<strong>和<em>而不是<b>和<i>
 
-媒体查询和需要相对父元素调整字体用em，其他时候用rem？
-
 nav指有导航性质的div，不一定只是顶部导航栏
 为了实现多级导航，一般nav嵌套ul和li
 
-nth-child， nth-of-type从1开始，其余从0开始
+a href="mailto:zuosiyuan001@gmail.com"
+a href="tel:+13439884310"
+a href="sms:+13439884310"
+
+aira和role
+
+------------------------------css---------------------------------
+
+媒体查询和需要相对父元素调整字体用em，其他时候用rem？
+
+nth-child，nth-of-type从1开始，其余从0开始
 
 布局 位置 大小边框 内容 其他
 
@@ -56,7 +67,10 @@ nth-child， nth-of-type从1开始，其余从0开始
 
 给元素设置背景色查看display类型
 三种元素显示可变，根据是否同行显示和调整大小设置display
-display: none ↔ block
+
+flex和inline-flex区别在于容器是block还是inline，内容都为flex，block和inline-block同理
+可以说flex/block是block-flex/block-block的简写，格式为：容器-内容
+inline不能设置宽高和垂直方向padding和margin，不能用translate
 
 float元素之间没有空隙
 float会压住标准流下方的盒子而不是内容，但是absolute/fixed会压住盒子及内容，可利用float做文字环绕
@@ -80,11 +94,9 @@ border影响盒子感观大小
 
 子元素margin使脱标父元素margin塌陷：子元素overflow: hidden
 
-inline不能设置宽高和垂直方向padding和margin，请设置inline-block or 定位 or flex；translate无效
 伪元素是元素的子盒子，有行内元素的属性
 
-行内文字垂直居中：文字line-height = height
-行内文字水平居中：盒子text-align
+居中详情看收藏的css-trick文章
 
 如果用rem，全局字体用%设置
 
@@ -103,7 +115,7 @@ animation: steps() 实现帧动画
 
 3D转换最好绕中心点旋转
 
-------------------------------------------------------------------
+---------------------------bootstrap----------------------------
 
 data-parent是被折叠内容共同的父元素
 
@@ -113,11 +125,9 @@ a class="btn" 效果等于 button class="btn-link"
 
 modal中插入的popover如果有按钮用a class="btn"？
 
-aria和role
+---------------------------javascript-----------------------------
 
-------------------------------------------------------------------
-
-for循环需要i--的时候可考虑while
+for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归
 
 for...in遍历keys，for...of遍历values，for...in可遍历对象
 
@@ -127,7 +137,18 @@ for...in遍历keys，for...of遍历values，for...in可遍历对象
 也就是加号统一string，减号统一number，注意NaN也是number，与数据类型先后顺序无关，常用来'number'转number
 NaN !== NaN
 
-简单数据类型传值，引用数据类型传址
+js赋值操作永远开辟新内存而不是修改原内存，不论堆栈
+mutation：pass by reference
+assignment：pass by value
+question：嵌套的引用数据类型的值和址存在哪里，深浅拷贝定义不统一
+
+浅拷贝：复制一层/拷贝栈？
+	基本：赋值
+	数组：slice，concat，[...]
+	对象：Object.assign，{...}
+深拷贝：复制所有/拷贝堆栈？
+	基本：N/A
+	引用：JSON.parse(JSON.stringify)（function无效），循环，递归
 
 变化的变量值：函数返回，固定的变量值：直接赋值
 
@@ -164,17 +185,17 @@ prototype是构造函数属性，__proto__是对象属性，实例__proto__指�
 子类constructor(arguments) { super(arguments) }继承父类constructor(arguments)
 
 this和currentTarget指向事件绑定者（函数调用者）或实例，event.target属性指向事件触发者
-诸如setTimeout等this指向window
+诸如setTimeout等异步方法this指向window
 如果需要给多个元素绑定相同事件可利用冒泡原理给父元素设置事件委托，其他时候可stopPropagation()阻止冒泡
-
-$(document).ready() / $() = window.DOMContentLoaded
 
 先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准
 
 setInterval时间间隔为10毫秒以上的定值
 setTimeout执行父函数可实现动态时间间隔，可替代setInterval
 
-------------------------------------------------------------------
+----------------------------jQuery-------------------------------
+
+$(document).ready() / $() = window.DOMContentLoaded
 
 toggle()中事件触发者和作用者最好不要是一个？
 
