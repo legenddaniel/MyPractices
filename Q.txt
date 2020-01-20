@@ -34,6 +34,12 @@ readme
 
 为何只操作栈内存不操作堆内存
 
+use strict
+
+vscode插件
+
+babel/polyfill
+
 ------------------------------------------------------------------
 
 考虑用sass/less重写
@@ -127,15 +133,24 @@ modal中插入的popover如果有按钮用a class="btn"？
 
 ---------------------------javascript-----------------------------
 
+undefined: 值未定义，undefined类型
+null：值被定义为null，null类型，为对象的
+
 for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归
 
 for...in遍历keys，for...of遍历values，for...in可遍历对象
 
 逻辑运算符运算式先将值转化为boolean，计算后再转化为原来的值返回
 
-'1'+1='11'	'1'-1=0		'1'+-1='1-1'	-1+'1'='-11'	'1'-(-1)=2		'a'-0=NaN
-也就是加号统一string，减号统一number，注意NaN也是number，与数据类型先后顺序无关，常用来'number'转number
+非Number运算，除了加号剩下会先将运算符两边的值转换成Number
+' ' = 0, [ ] = 0, null = 0, '\n\t\s' = 0，true = 1, [1] = 1, 
+'0x11' = 17, '-INFINITY' = -Infinity, '123e-1' = 12.3
+NaN：'[ ]'，'[1]'，[1, 2]，{ }，'true'，undefined	
 NaN !== NaN
+
+除Boolean('') === false其余字符串都为true包括'0'
+
+i++返回+1前的i，++i返回+1后的i，除此之外无区别，循环中一般用i++
 
 js赋值操作永远开辟新内存而不是修改原内存，不论堆栈
 mutation：pass by reference
@@ -176,8 +191,12 @@ X在Object[X]中指具体value，Array[X]中指顺序
 惰性函数：通过函数内重写函数达到一次判断永久生效
 立即调用函数：隔离作用域并用闭包访问，但ES6有块级作用域
 
-constructor存放不同属性/方法；prototype/__proto__存放相同方法
-prototype是构造函数属性，__proto__是对象属性，实例__proto__指向prototype，所有对象都有__proto__包括instance Object window
+/*\
+|   |    constructor存放不同属性/方法；prototype/__proto__存放相同方法
+|   |    函数对象有prototype，所有对象有__proto__，__proto__指向创建对象的构造函数的prototype
+Object和Function的prototype里集成了所有JS自带API
+\*/
+
 若通过es5方式覆写prototype需要注意constructor的指向
 
 箭头函数不能作为constructor，也没有prototype，也不能作为generator
