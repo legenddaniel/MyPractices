@@ -78,12 +78,18 @@ flex和inline-flex区别在于容器是block还是inline，内容都为flex，bl
 可以说flex/block是block-flex/block-block的简写，格式为：容器-内容
 inline不能设置宽高和垂直方向padding和margin，不能用translate
 
-float元素之间没有空隙
+width: fit-content实现和inline相同效果
+
+float影响的是后面和父元素的布局
+float元素具有inline-block性质，float元素之间没有空隙
 float会压住标准流下方的盒子而不是内容，但是absolute/fixed会压住盒子及内容，可利用float做文字环绕
 flex会使float相关属性失效
+
 relative指与自身原本（文档流中）位置的相对
 absolute指相对最近的有定位祖先元素的绝对
 一般开发：子绝父相
+如果子绝祖相，子元素会随着父元素移动而移动
+sticky指初始为absolute滚动到屏幕一端就变为fixed，非兄弟元素后边的sticky会顶掉前边的，兄弟元素会覆盖前边的
 
 父：align-items针对单行，align-content针对多行；子：align-self
 flex子项占父项比
@@ -96,21 +102,27 @@ padding影响盒子实际大小，除非没有设置width
 border影响盒子感观大小
 可通过设置box-sizing转换盒子大小计算方式
 
+border占据空间，outline不占据，并且在内容之上
+
 定位的子元素在父元素中心：top50%, left50%, translate(-50%,-50%)
 
 子元素margin使脱标父元素margin塌陷：子元素overflow: hidden
 
 伪元素是元素的子盒子，有行内元素的属性
 
-居中详情看收藏的css-trick文章
+悬停a时对b操作：a:hover b{} 或 a:hover + b{}
+
+/*\
+|   |    居中详情看收藏的css-trick文章
+\*/
 
 如果用rem，全局字体用%设置
 
 图片底边框空白：vertical-align：非baseline；flex下无效
 
-文字一行显示 white-space: nowrap
+list项目符号可用背景图片设置
 
-悬停a时对b操作：a:hover b{} 或 a:hover + b{}
+white-space: pre和<pre>一样
 
 animation: steps() 实现帧动画
 
@@ -140,6 +152,8 @@ for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归
 
 for...in遍历keys，for...of遍历values，for...in可遍历对象
 
+三元运算符只建议用于赋值，因为可读性差，而且不能用break/continue
+
 逻辑运算符运算式先将值转化为boolean，计算后再转化为原来的值返回
 
 非Number运算，除了加号剩下会先将运算符两边的值转换成Number
@@ -149,6 +163,10 @@ NaN：'[ ]'，'[1]'，[1, 2]，{ }，'true'，undefined
 NaN !== NaN
 
 除Boolean('') === false其余字符串都为true包括'0'
+
+逻辑运算符本质就是短路运算，即使是在if中，即使条件有多个
+与：try返回第一个假，catch返回最后一个，或：try返回第一个真，catch返回最后一个
+优先级非与或
 
 i++返回+1前的i，++i返回+1后的i，除此之外无区别，循环中一般用i++
 
@@ -194,7 +212,7 @@ X在Object[X]中指具体value，Array[X]中指顺序
 /*\
 |   |    constructor存放不同属性/方法；prototype/__proto__存放相同方法
 |   |    函数对象有prototype，所有对象有__proto__，__proto__指向创建对象的构造函数的prototype
-Object和Function的prototype里集成了所有JS自带API
+|   |    Object和Function的prototype里集成了所有JS自带API
 \*/
 
 若通过es5方式覆写prototype需要注意constructor的指向
