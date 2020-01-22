@@ -86,7 +86,7 @@ float会压住标准流下方的盒子而不是内容，但是absolute/fixed会�
 flex会使float相关属性失效
 
 relative指与自身原本（文档流中）位置的相对
-absolute指相对最近的有定位祖先元素的绝对
+absolute指相对最近的有定位祖先元素的绝对，flex对absolute元素无效
 一般开发：子绝父相
 如果子绝祖相，子元素会随着父元素移动而移动
 sticky指初始为absolute滚动到屏幕一端就变为fixed，非兄弟元素后边的sticky会顶掉前边的，兄弟元素会覆盖前边的
