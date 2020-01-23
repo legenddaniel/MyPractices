@@ -151,6 +151,7 @@ null：值被定义为null，null类型，为对象的
 for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归
 
 for...in遍历keys，for...of遍历values，for...in可遍历对象
+for...in遍历对象后Int类型变量名会被重排，其他类型保持原顺序
 
 三元运算符只建议用于赋值，因为可读性差，而且不能用break/continue
 
@@ -170,6 +171,8 @@ NaN !== NaN
 
 i++返回+1前的i，++i返回+1后的i，除此之外无区别，循环中一般用i++
 
+"key" in { }也可以检查继承的属性，不加引号的key表示属性赋值的变量，类似Object[key]引用变量
+
 js赋值操作永远开辟新内存而不是修改原内存，不论堆栈
 mutation：pass by reference
 assignment：pass by value
@@ -178,10 +181,12 @@ question：嵌套的引用数据类型的值和址存在哪里，深浅拷贝定
 浅拷贝：复制一层/拷贝栈？
 	基本：赋值
 	数组：slice，concat，[...]
-	对象：Object.assign，{...}
+	对象：Object.assign，{...}	assign不能拷贝继承属性和不可枚举属性
 深拷贝：复制所有/拷贝堆栈？
 	基本：N/A
 	引用：JSON.parse(JSON.stringify)（function无效），循环，递归
+
+Object.defineProperty可以改变对象属性的的属性，如enumerability和writability等
 
 变化的变量值：函数返回，固定的变量值：直接赋值
 
