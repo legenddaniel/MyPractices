@@ -40,6 +40,8 @@ vscode插件
 
 babel/polyfill
 
+Symbol
+
 ------------------------------------------------------------------
 
 考虑用sass/less重写
@@ -54,6 +56,8 @@ js 添加的是行内样式
 
 nav指有导航性质的div，不一定只是顶部导航栏
 为了实现多级导航，一般nav嵌套ul和li
+
+ul ol dl
 
 a href="mailto:zuosiyuan001@gmail.com"
 a href="tel:+13439884310"
@@ -157,6 +161,7 @@ for...in遍历对象后Int类型变量名会被重排，其他类型保持原顺
 
 逻辑运算符运算式先将值转化为boolean，计算后再转化为原来的值返回
 
+字符串转数字最好方式：+' '
 非Number运算，除了加号剩下会先将运算符两边的值转换成Number
 ' ' = 0, [ ] = 0, null = 0, '\n\t\s' = 0，true = 1, [1] = 1, 
 '0x11' = 17, '-INFINITY' = -Infinity, '123e-1' = 12.3
