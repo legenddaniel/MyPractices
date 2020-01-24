@@ -201,8 +201,6 @@ return空值终止函数，类似循环中break
 
 es5参数是以（伪）数组arguments形式传递进function，arguments是局部变量，arguments只有数组的length和索引功能
 
-调用变量作为Object内的查找ID需用bracket
-
 模板字符串支持换行输出，类似pre效果
 
 赋值直接=（赋值指的是赋给变量value而不是创建变量）
@@ -220,6 +218,7 @@ X在Object[X]中指具体value，Array[X]中指顺序
 立即调用函数：隔离作用域并用闭包访问，但ES6有块级作用域
 
 /*\
+|   |    js中的class本质是constructor，本质的本质是对象
 |   |    constructor存放不同属性/方法；prototype/__proto__存放相同方法
 |   |    函数对象有prototype，所有对象有__proto__，__proto__指向创建对象的构造函数的prototype
 |   |    Object和Function的prototype里集成了所有JS自带API
