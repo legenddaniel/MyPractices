@@ -42,6 +42,8 @@ babel/polyfill
 
 Symbol
 
+四舍五入精度问题
+
 ------------------------------------------------------------------
 
 考虑用sass/less重写
@@ -150,7 +152,11 @@ modal中插入的popover如果有按钮用a class="btn"？
 -------------------------- javascript ----------------------------
 
 undefined: 值未定义，undefined类型
-null：值被定义为null，null类型，为对象的
+null：值被定义为null，null类型
+访问primitives会创建临时包装对象，除了undefined和null，为primitives添加属性方法等同于为临时包装对象添加，但之后会销毁
+因此，primitives不是对象
+
+清空数组arr.length = 0
 
 for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归
 
@@ -166,7 +172,7 @@ for...in遍历对象后Int类型变量名会被重排，其他类型保持原顺
 ' ' = 0, [ ] = 0, null = 0, '\n\t\s' = 0，true = 1, [1] = 1, 
 '0x11' = 17, '-INFINITY' = -Infinity, '123e-1' = 12.3
 NaN：'[ ]'，'[1]'，[1, 2]，{ }，'true'，undefined	
-NaN !== NaN
+NaN !== NaN，Object.is(NaN, NaN) === true
 
 除Boolean('') === false其余字符串都为true包括'0'
 
@@ -192,6 +198,8 @@ question：嵌套的引用数据类型的值和址存在哪里，深浅拷贝定
 	引用：JSON.parse(JSON.stringify)（function无效），循环，递归
 
 Object.defineProperty可以改变对象属性的的属性，如enumerability和writability等
+
+构造函数new Object过程：创建空对象this，函数执行，返回this
 
 变化的变量值：函数返回，固定的变量值：直接赋值
 
