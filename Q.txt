@@ -8,8 +8,6 @@ vscode技巧
 
 移动端开发注意物理像素比
 
-浮动 行内块 flex
-
 button 和 input 区别
 
 property和attribute区别
@@ -27,6 +25,8 @@ callback → promise → async/await
 免费服务器，或nodejs搭建本地服务器
 
 前端代码规范
+
+模块化vs组件化
 
 编程思想
 
@@ -197,6 +197,8 @@ question：嵌套的引用数据类型的值和址存在哪里，深浅拷贝定
 	基本：N/A
 	引用：JSON.parse(JSON.stringify)（function无效），循环，递归
 
+Array.sort()返回排序后的原数组
+
 Object.defineProperty可以改变对象属性的的属性，如enumerability和writability等
 
 构造函数new Object过程：创建空对象this，函数执行，返回this
@@ -220,10 +222,13 @@ X在Object[X]中指具体value，Array[X]中指顺序
 闭包：将变量作用域从函数提高到全局，避免垃圾回收，this指向window
 有内存泄漏风险，只有当需要累积变量值才用
 
-私有变量命名：this._name = name
-
 惰性函数：通过函数内重写函数达到一次判断永久生效
 立即调用函数：隔离作用域并用闭包访问，但ES6有块级作用域
+
+call、apply、bind：通过改变this指向以在其他作用域正确调用函数/方法
+call：立刻调用，分开传参，参数是单独个体时适用
+apply：立刻调用，数组传参，参数本身是数组时适用
+bind：分开调用，分开传参，返回一个函数名不带括号，如果需要更新this可另起一变量
 
 /*\
 |   |    js中的class本质是constructor，本质的本质是对象
