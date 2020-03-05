@@ -2,6 +2,8 @@ Sync: 上传完成。Gist ID:4423e367713d9962adb74fac146042c8。请复制这个 
 
 Ubuntu
 
+IIS服务器
+
 Powershell git
 
 vscode技巧
@@ -40,9 +42,17 @@ vscode插件
 
 babel/polyfill
 
+eslint
+
 Symbol
 
 四舍五入精度问题
+
+有thisArg参数的方法，如foreach map filter等
+
+虚拟dom
+
+github.io
 
 ------------------------------------------------------------------
 
@@ -71,7 +81,7 @@ aira和role
 
 媒体查询和需要相对父元素调整字体用em，其他时候用rem？
 
-nth-child，nth-of-type从1开始，其余从0开始
+nth-child，nth-of-type从1开始，其余从0开始，包括$.eq和:eq
 
 布局 位置 大小边框 内容 其他
 
@@ -139,6 +149,15 @@ animation: steps() 实现帧动画
 
 3D转换最好绕中心点旋转
 
+----------------------------- sass ------------------------------
+
+list index从1开始，-1表示倒数第一
+
+path是相对css的，console可显示绝对路径
+
+没有变量就@extend placeholder，有就@include mixin
+@extend像prototype，@include像constructor
+
 -------------------------- bootstrap ---------------------------
 
 data-parent是被折叠内容共同的父元素
@@ -199,6 +218,8 @@ question：嵌套的引用数据类型的值和址存在哪里，深浅拷贝定
 
 Array.sort()返回排序后的原数组
 
+javascript中object和namespace可以认为是一回事
+
 Object.defineProperty可以改变对象属性的的属性，如enumerability和writability等
 
 构造函数new Object过程：创建空对象this，函数执行，返回this
@@ -235,6 +256,7 @@ bind：分开调用，分开传参，返回一个函数名不带括号，如果�
 |   |    constructor存放不同属性/方法；prototype/__proto__存放相同方法
 |   |    函数对象有prototype，所有对象有__proto__，__proto__指向创建对象的构造函数的prototype
 |   |    Object和Function的prototype里集成了所有JS自带API
+|   |    属性写在constructor里，不需要（直接）调用constructor参数的方法写在prototype里
 \*/
 
 若通过es5方式覆写prototype需要注意constructor的指向
@@ -245,11 +267,18 @@ bind：分开调用，分开传参，返回一个函数名不带括号，如果�
 
 GC回收
 
+尽量避免try catch，尤其是异步？
+
 先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准
 
 -------------------------- DOM API ----------------------------
+/ 0 \
+| 性 |  减少reflow和repaint：减少dom操作，常用的dom元素缓存，尤其是常用html集合的length
+| 能 |  减少http请求
+| 优 |  减少
+| 化 |
+\ 0 /
 
-常用的dom元素储存到变量
 
 this和currentTarget指向事件绑定者（函数调用者）或实例，event.target属性指向事件触发者
 诸如setTimeout等异步方法this指向window
@@ -267,7 +296,7 @@ toggle()中事件触发者和作用者最好不要是一个？
 
 typeof ?.val() === 'string'
 
-eq() 比 :eq 快很多，如果作为选择器末尾元素用eq()
+eq() 比 :eq 快很多，如果作为选择器末尾元素用eq()，他们都从0开始
 
 对html固有属性操作用prop，自定义属性用attr，prop无法操作自定义属性（如data-*），但attr可以操作固有属性
 selectedIndex, tagName, nodeName, nodeType, ownerDocument, defaultChecked, defaultSelected用prop()
