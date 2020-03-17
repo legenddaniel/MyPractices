@@ -144,8 +144,12 @@ animation: steps() 实现帧动画
 
 多个transition用逗号隔开：width .5s, height .5s
 
+对于transform，我们看到的是投影，基于这个事实理解translateZ和perspective对视觉效果的影响
+因为看到的是投影，所以需要一个荧幕，也就是在父级设置perspective和*-origin的原因，父级充当荧幕
+
 父元素perspective使子元素animation/transform有立体感过程感
 父元素transform-style: preserve-3d使子元素参与3d转换
+translateZ移动图像，perspective移动观察者
 
 3D转换最好绕中心点旋转
 
@@ -271,6 +275,8 @@ GC回收
 
 先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准
 
+Promise的错误会冒泡/传递
+
 -------------------------- DOM API ----------------------------
 / 0 \
 | 性 |  减少reflow和repaint：减少dom操作，常用的dom元素缓存，尤其是常用html集合的length
@@ -279,6 +285,10 @@ GC回收
 | 化 |
 \ 0 /
 
+htmlcollection获取reference，都是live（实时更新）的，querySelectorAll获取value
+querySelector系列和getElementsByName返回nodelist，其余getElement系列返回htmlcollection
+获取元素用getElement，修改元素用querySelector？
+与arguments一样，htmlcollection和nodelist都是类数组对象（instanceof Object：true, instanceof Array：false）
 
 this和currentTarget指向事件绑定者（函数调用者）或实例，event.target属性指向事件触发者
 诸如setTimeout等异步方法this指向window
@@ -287,6 +297,9 @@ this和currentTarget指向事件绑定者（函数调用者）或实例，event.
 
 setInterval时间间隔为10毫秒以上的定值
 setTimeout执行父函数可实现动态时间间隔，可替代setInterval
+
+onscroll：鼠标/触摸板/键盘滚动距离>0触发
+onwheel：鼠标/触摸板发出滚动动作触发
 
 --------------------------- jQuery ------------------------------
 
