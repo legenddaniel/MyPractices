@@ -14,21 +14,23 @@ button 和 input 区别
 
 property和attribute区别
 
+document和window区别
+
 js加载，js引入
 
 为什么需要getter setter
 
 断点调试，chrome debugger
 
-事件冒泡捕获应用
-
 callback → promise → async/await
 
-免费服务器，或nodejs搭建本地服务器
+rAF
 
 前端代码规范
 
 模块化vs组件化
+
+框架的真正优势
 
 编程思想
 
@@ -52,7 +54,11 @@ Symbol
 
 虚拟dom
 
-github.io
+data-*用法
+
+真正实现私有变量/属性
+
+new 操作符
 
 ------------------------------------------------------------------
 
@@ -69,13 +75,13 @@ js 添加的是行内样式
 nav指有导航性质的div，不一定只是顶部导航栏
 为了实现多级导航，一般nav嵌套ul和li
 
-ul ol dl
-
 a href="mailto:zuosiyuan001@gmail.com"
 a href="tel:+13439884310"
 a href="sms:+13439884310"
 
 aira和role
+
+css内的资源路径相对css，js内的资源路径相对html
 
 ----------------------------- css --------------------------------
 
@@ -112,11 +118,9 @@ flex子项占父项比
 
 z-index需要定位
 
-盒子内部：padding content
-盒子外部：border margin 
-padding影响盒子实际大小，除非没有设置width
-border影响盒子感观大小
-可通过设置box-sizing转换盒子大小计算方式
+盒子内部：content（padding border @border-box）
+盒子外部：margin（padding border @content-box）
+border-box好在设置padding和border不影响layout
 
 border占据空间，outline不占据，并且在内容之上
 
@@ -124,7 +128,7 @@ border占据空间，outline不占据，并且在内容之上
 
 子元素margin使脱标父元素margin塌陷：子元素overflow: hidden
 
-伪元素是元素的子盒子，有行内元素的属性
+伪元素是元素的子盒子，有行内元素的属性，比如没有宽高
 
 悬停a时对b操作：a:hover b{} 或 a:hover + b{}
 
@@ -181,6 +185,8 @@ null：值被定义为null，null类型
 
 清空数组arr.length = 0
 
+in查找对象和原型属性，hasownproperty只查找对象本身属性
+
 for循环需要i--的时候可考虑while，需要+=/-=.etc可考虑递归
 
 for...in遍历keys，for...of遍历values，for...in可遍历对象
@@ -206,6 +212,8 @@ NaN !== NaN，Object.is(NaN, NaN) === true
 i++返回+1前的i，++i返回+1后的i，除此之外无区别，循环中一般用i++
 
 "key" in { }也可以检查继承的属性，不加引号的key表示属性赋值的变量，类似Object[key]引用变量
+
+函数/var变量声明会提升，由于表达式在运行时赋值，所以function a()比var a = function()更早声明并可用
 
 js赋值操作永远开辟新内存而不是修改原内存，不论堆栈
 mutation：pass by reference
@@ -264,10 +272,10 @@ bind：分开调用，分开传参，返回一个函数名不带括号，如果�
 \*/
 
 若通过es5方式覆写prototype需要注意constructor的指向
-
 箭头函数不能作为constructor，也没有prototype，也不能作为generator
-
 子类constructor(arguments) { super(arguments) }继承父类constructor(arguments)
+constructor默认返回instance，如果返回primitives则返回instance，如果返回reference则返回reference
+若constructor和prototype里有相同属性方法，则优先调用constructor里的
 
 GC回收
 
@@ -275,7 +283,9 @@ GC回收
 
 先执行同步任务，再执行异步任务，异步任务执行顺序以触发顺序为准
 
+resolve等于then的参数，reject等于catch的参数？
 Promise的错误会冒泡/传递
+相同Promise分别添加多个then不会覆盖，类似addEventlistener
 
 -------------------------- DOM API ----------------------------
 / 0 \
@@ -285,6 +295,17 @@ Promise的错误会冒泡/传递
 | 化 |
 \ 0 /
 
+document.documentElement === html，计算总体尺寸属性时用这个
+
+Element.client*：当前可见content + padding，包括伪元素（注意没有自身宽高的也没有client*比如行内元素，伪元素），ie6+
+Element.scroll*：总content + padding，包括伪元素，若不可/无需滚动则等于ELement.client*，ie8+（ie5-7有问题）
+HTMLElement.offset*：总content +padding + border + 滚动条，不包括伪元素，d-none元素值为0，ie8+，实验性最好不用
+
+document.documentElement.client*：当前视窗
+document.documentElement.offset*/scroll*：全部内容
+window.inner*：当前视窗+滚动条，ie9+
+window.outer*：当前浏览器窗口，ie9+
+
 htmlcollection获取reference，都是live（实时更新）的，querySelectorAll获取value
 querySelector系列和getElementsByName返回nodelist，其余getElement系列返回htmlcollection
 获取元素用getElement，修改元素用querySelector？
@@ -293,13 +314,25 @@ querySelector系列和getElementsByName返回nodelist，其余getElement系列�
 this和currentTarget指向事件绑定者（函数调用者）或实例，event.target属性指向事件触发者
 诸如setTimeout等异步方法this指向window
 
+冒泡：自身→祖先
+捕获：祖先→自身
 如果需要给多个元素绑定相同事件可利用冒泡原理给父元素设置事件委托，其他时候可stopPropagation()阻止冒泡
+
+return false在直接绑定事件（element.onclick, etc.）时 === preventDefault + stopPropagation，在addEventListener里无效
 
 setInterval时间间隔为10毫秒以上的定值
 setTimeout执行父函数可实现动态时间间隔，可替代setInterval
 
 onscroll：鼠标/触摸板/键盘滚动距离>0触发
 onwheel：鼠标/触摸板发出滚动动作触发
+
+onresize在resize之后触发，onscroll同理
+orientationchange会触发scroll（和resize？）
+
+DOMContentLoaded：html加载完成
+load：除脚本外其他加载完成
+
+rAF(fn) === setTimeout(fn, 1000/fps)
 
 --------------------------- jQuery ------------------------------
 
