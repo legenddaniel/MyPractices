@@ -11,7 +11,6 @@ CSS pre-processors can be used
 --------------------------------------------------------------------------------------------------- */
 
 body {
-  /* position: relative; */
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -23,9 +22,6 @@ body {
   min-height: 100%;
   padding: 0;
   margin: 0;
-  /* height: 100%;
-  min-width: 50%;
-  max-width: 100%; */
   overflow-x: hidden;
 }
 
@@ -33,15 +29,21 @@ a {
   text-decoration: none;
 }
 
-a:link, a:visited {
+a:link,
+a:visited {
   color: currentColor;
 }
 
-a, .find-job-btn, .popular-btn, .s-employer button, .delete-icon {
+a,
+.find-job-btn,
+.popular-btn,
+.s-employer button,
+.delete-icon {
   cursor: pointer;
 }
 
-button, input {
+button,
+input {
   outline: none;
 }
 
@@ -57,7 +59,6 @@ nav {
   align-items: center;
   text-align: left;
   height: 35px;
-  /* width: 100%; */
   min-width: 1000px;
   border-width: 2px;
   border-style: none none solid none;
@@ -134,7 +135,7 @@ nav .en-icon {
 
 .search-icon::after {
   position: absolute;
-  content: '';
+  content: "";
   top: 11px;
   left: 9px;
   width: 6px;
@@ -147,7 +148,8 @@ nav .en-icon {
   -o-transform: rotate(45deg);
 }
 
-main a:hover, footer a:hover {
+main a:hover,
+footer a:hover {
   text-decoration: underline;
 }
 
@@ -159,7 +161,6 @@ main a:hover, footer a:hover {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  /* width: 100%; */
   height: 20em;
   border-width: 2px;
   border-style: none none solid none;
@@ -191,12 +192,11 @@ main a:hover, footer a:hover {
   font-size: 14px;
 }
 
-.what, .where {
+.what,
+.where {
   position: relative;
   width: 400px;
-  /* min-width: 400px; */
   text-align: left;
-  /* overflow: hidden; */
 }
 
 .what .search-icon {
@@ -207,7 +207,7 @@ main a:hover, footer a:hover {
 .inputbox {
   position: relative;
   width: 94%;
-  height: 38px;
+  height: 44px;
   padding-left: 1em;
   border: 2px solid;
   border-color: rgb(168, 168, 168);
@@ -249,7 +249,7 @@ main a:hover, footer a:hover {
 
 .location-icon::before {
   position: absolute;
-  content: '';
+  content: "";
   top: 2.5px;
   left: 2.5px;
   width: 3px;
@@ -261,7 +261,7 @@ main a:hover, footer a:hover {
 
 .location-icon::after {
   position: absolute;
-  content: '';
+  content: "";
   top: -2.5px;
   left: -2.5px;
   width: 15px;
@@ -305,11 +305,15 @@ main a:hover, footer a:hover {
   color: rgb(107, 106, 106);
 }
 
-.resume-n-employer a, .popular-container a, .language a {
+.resume-n-employer a,
+.popular-container a,
+.language a {
   color: rgba(0, 0, 228, 0.8);
 }
 
-.resume-n-employer a:hover, .popular-container a:hover, .language a:hover {
+.resume-n-employer a:hover,
+.popular-container a:hover,
+.language a:hover {
   color: rgba(0, 0, 228, 0.6);
 }
 
@@ -324,8 +328,6 @@ main a:hover, footer a:hover {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  /* flex: 1 */
-  /* width: 100%; */
   height: auto;
   min-height: 19em;
   border-width: 7px;
@@ -442,7 +444,8 @@ main a:hover, footer a:hover {
 }
 
 @media screen and (max-width: 1280px) {
-  .what, .where {
+  .what,
+  .where {
     width: 350px;
   }
 }
@@ -452,7 +455,9 @@ main a:hover, footer a:hover {
     min-width: 500px;
     overflow-x: auto;
   }
-  .resume-n-employer, .popular-container p, .language {
+  .resume-n-employer,
+  .popular-container p,
+  .language {
     display: none;
   }
   .search-container {
@@ -468,13 +473,12 @@ main a:hover, footer a:hover {
     align-items: center;
     margin-top: 2em;
   }
-  .what, .where {
+  .what,
+  .where {
     margin-top: 1em;
     min-width: 500px;
   }
-  /* .what {
-    margin-right: 12%;
-  } */
+
   .submit {
     width: 100%;
     margin-top: 2em;
