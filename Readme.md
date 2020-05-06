@@ -4,7 +4,7 @@ I promise all codes as well as icons were done on my own.
 
 Features:
     
-    1. Indeed.ca index without sign-in.
+    1. Indeed.ca index without Sign-in and History modules. You can use this page as if you are using the real Indeed index.
 
     2. Including almost all the features (full-screen/window mode layouts, styles, events and functions) of the real Indeed.ca index but might have a little bit differences. Some of them are identified in the page as comments when hovering on specific elements which are usually with an underline/border.
 
